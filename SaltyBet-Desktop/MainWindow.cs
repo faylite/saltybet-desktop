@@ -43,7 +43,7 @@ namespace SaltyBet_Desktop
 			// Update Blue Side
 			this.tbBlueName.Text = dataExtractor.GetBlueName();
 			this.tbBluePot.Text = dataExtractor.GetBluePot().ToString();
-			this.tbBlueOdds.Text = dataExtractor.GetRedOdds().ToString();
+			this.tbBlueOdds.Text = dataExtractor.GetBlueOdds().ToString();
 		}
 	}
 }
