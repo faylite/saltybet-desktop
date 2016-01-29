@@ -15,7 +15,7 @@ namespace SaltyBet_Desktop
 	public partial class MainWindow : Form
 	{
 		private ChromiumWebBrowser browser;
-		private DataWindow dataWindow;
+		private DataExtractor dataExtractor;
 
 		public MainWindow()
 		{
@@ -26,14 +26,13 @@ namespace SaltyBet_Desktop
 			browser = new ChromiumWebBrowser("http://saltybet.com");
 			this.pMain.Controls.Add(browser);
 			browser.Dock = DockStyle.Fill;
-			
-			// dataWindow = new DataWindow(browser);
-			// dataWindow.Show();
+
+			dataExtractor = new DataExtractor(this.browser);
 		}
 
-		public void Test()
+		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			
+
 		}
 	}
 }

@@ -31,22 +31,22 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.pInfo = new System.Windows.Forms.Panel();
 			this.gbRed = new System.Windows.Forms.GroupBox();
+			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.tbPotRed = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tbCharRed = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.gbBlue = new System.Windows.Forms.GroupBox();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.tbPotBlue = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.tbCharBlue = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.gbInfo = new System.Windows.Forms.GroupBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnUpdate = new System.Windows.Forms.Button();
 			this.pMain = new System.Windows.Forms.Panel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
 			this.pInfo.SuspendLayout();
 			this.gbRed.SuspendLayout();
 			this.gbBlue.SuspendLayout();
@@ -84,6 +84,31 @@
 			this.gbRed.TabIndex = 3;
 			this.gbRed.TabStop = false;
 			this.gbRed.Text = "Red";
+			// 
+			// textBox2
+			// 
+			this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.textBox2.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox2.Location = new System.Drawing.Point(6, 227);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.ReadOnly = true;
+			this.textBox2.Size = new System.Drawing.Size(301, 34);
+			this.textBox2.TabIndex = 9;
+			this.textBox2.Text = "0";
+			this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(134, 192);
+			this.label6.Name = "label6";
+			this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label6.Size = new System.Drawing.Size(44, 26);
+			this.label6.TabIndex = 8;
+			this.label6.Text = "Pot";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tbPotRed
 			// 
@@ -155,6 +180,19 @@
 			this.gbBlue.TabStop = false;
 			this.gbBlue.Text = "Blue";
 			// 
+			// textBox1
+			// 
+			this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.textBox1.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(6, 227);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(301, 34);
+			this.textBox1.TabIndex = 7;
+			this.textBox1.Text = "0";
+			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
 			// tbPotBlue
 			// 
 			this.tbPotBlue.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -167,6 +205,18 @@
 			this.tbPotBlue.TabIndex = 5;
 			this.tbPotBlue.Text = "0";
 			this.tbPotBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(134, 192);
+			this.label5.Name = "label5";
+			this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label5.Size = new System.Drawing.Size(44, 26);
+			this.label5.TabIndex = 6;
+			this.label5.Text = "Pot";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label4
 			// 
@@ -206,7 +256,7 @@
 			// 
 			// gbInfo
 			// 
-			this.gbInfo.Controls.Add(this.button1);
+			this.gbInfo.Controls.Add(this.btnUpdate);
 			this.gbInfo.Dock = System.Windows.Forms.DockStyle.Right;
 			this.gbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbInfo.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,15 +268,16 @@
 			this.gbInfo.TabStop = false;
 			this.gbInfo.Text = "Info";
 			// 
-			// button1
+			// btnUpdate
 			// 
-			this.button1.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(6, 208);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(592, 59);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Update";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnUpdate.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnUpdate.Location = new System.Drawing.Point(6, 208);
+			this.btnUpdate.Name = "btnUpdate";
+			this.btnUpdate.Size = new System.Drawing.Size(592, 59);
+			this.btnUpdate.TabIndex = 0;
+			this.btnUpdate.Text = "Update";
+			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// pMain
 			// 
@@ -236,56 +287,6 @@
 			this.pMain.Name = "pMain";
 			this.pMain.Size = new System.Drawing.Size(1227, 475);
 			this.pMain.TabIndex = 1;
-			// 
-			// textBox1
-			// 
-			this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox1.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(6, 227);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(301, 34);
-			this.textBox1.TabIndex = 7;
-			this.textBox1.Text = "0";
-			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(134, 192);
-			this.label5.Name = "label5";
-			this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label5.Size = new System.Drawing.Size(44, 26);
-			this.label5.TabIndex = 6;
-			this.label5.Text = "Pot";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// textBox2
-			// 
-			this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox2.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(6, 227);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(301, 34);
-			this.textBox2.TabIndex = 9;
-			this.textBox2.Text = "0";
-			this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(134, 192);
-			this.label6.Name = "label6";
-			this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label6.Size = new System.Drawing.Size(44, 26);
-			this.label6.TabIndex = 8;
-			this.label6.Text = "Pot";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// MainWindow
 			// 
@@ -322,7 +323,7 @@
 		private System.Windows.Forms.TextBox tbCharBlue;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox gbInfo;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox textBox1;
