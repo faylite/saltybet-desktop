@@ -22,14 +22,13 @@ namespace SaltyBet_Desktop
 			InitializeComponent();
 
 			var settings = new CefSettings();
-
 			Cef.Initialize();
 			browser = new ChromiumWebBrowser("http://saltybet.com");
-			this.Controls.Add(browser);
+			this.pMain.Controls.Add(browser);
 			browser.Dock = DockStyle.Fill;
 			
-			dataWindow = new DataWindow(browser);
-			dataWindow.Show();
+			// dataWindow = new DataWindow(browser);
+			// dataWindow.Show();
 		}
 
 		public void Test()
