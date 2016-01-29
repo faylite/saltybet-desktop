@@ -32,7 +32,19 @@ namespace SaltyBet_Desktop
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
+			// Don't update if browser is on the wrong page. Or the browser isn't initialized. 
+			if (!browser.IsBrowserInitialized || browser.Address != "http://saltybet.com")
+				return;
 
+			// Update Red Side
+			this.tbRedName.Text = dataExtractor.GetRedName();
+			this.tbRedPot.Text = dataExtractor.GetRedPot().ToString();
+			this.tbRedOdds.Text = "n/a";
+
+			// Update Blue Side
+			this.tbBlueName.Text = dataExtractor.GetBlueName();
+			this.tbBluePot.Text = dataExtractor.GetBluePot().ToString();
+			this.tbBlueOdds.Text = "n/a";
 		}
 	}
 }
