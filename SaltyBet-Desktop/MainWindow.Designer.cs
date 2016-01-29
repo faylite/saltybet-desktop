@@ -53,7 +53,7 @@
 			// 
 			// pInfo
 			// 
-			this.pInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.pInfo.BackColor = System.Drawing.Color.Transparent;
 			this.pInfo.Controls.Add(this.gbRed);
 			this.pInfo.Controls.Add(this.gbBlue);
 			this.pInfo.Controls.Add(this.gbInfo);
@@ -178,7 +178,7 @@
 			// 
 			// gbBlue
 			// 
-			this.gbBlue.BackColor = System.Drawing.Color.RoyalBlue;
+			this.gbBlue.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.gbBlue.Controls.Add(this.tbBlueOdds);
 			this.gbBlue.Controls.Add(this.tbBluePot);
 			this.gbBlue.Controls.Add(this.label5);
@@ -293,6 +293,7 @@
 			this.gbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.gbInfo.BackColor = System.Drawing.Color.Transparent;
 			this.gbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbInfo.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.gbInfo.Location = new System.Drawing.Point(0, 0);
@@ -305,7 +306,7 @@
 			// 
 			// pMain
 			// 
-			this.pMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.pMain.BackColor = System.Drawing.Color.Transparent;
 			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pMain.Location = new System.Drawing.Point(0, 0);
 			this.pMain.Name = "pMain";
@@ -316,6 +317,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1210, 785);
 			this.Controls.Add(this.pMain);
 			this.Controls.Add(this.pInfo);
