@@ -45,12 +45,10 @@
 			this.tbBlueName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.gbInfo = new System.Windows.Forms.GroupBox();
-			this.btnUpdate = new System.Windows.Forms.Button();
 			this.pMain = new System.Windows.Forms.Panel();
 			this.pInfo.SuspendLayout();
 			this.gbRed.SuspendLayout();
 			this.gbBlue.SuspendLayout();
-			this.gbInfo.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pInfo
@@ -292,30 +290,18 @@
 			// 
 			// gbInfo
 			// 
-			this.gbInfo.Controls.Add(this.btnUpdate);
-			this.gbInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.gbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbInfo.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.gbInfo.Location = new System.Drawing.Point(0, 0);
 			this.gbInfo.Name = "gbInfo";
 			this.gbInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.gbInfo.Size = new System.Drawing.Size(1210, 273);
+			this.gbInfo.Size = new System.Drawing.Size(578, 273);
 			this.gbInfo.TabIndex = 5;
 			this.gbInfo.TabStop = false;
 			this.gbInfo.Text = "Info";
-			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnUpdate.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnUpdate.Location = new System.Drawing.Point(6, 208);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(572, 59);
-			this.btnUpdate.TabIndex = 0;
-			this.btnUpdate.Text = "Update";
-			this.btnUpdate.UseVisualStyleBackColor = true;
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// pMain
 			// 
@@ -341,7 +327,6 @@
 			this.gbRed.PerformLayout();
 			this.gbBlue.ResumeLayout(false);
 			this.gbBlue.PerformLayout();
-			this.gbInfo.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -360,12 +345,11 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox tbBlueName;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.GroupBox gbInfo;
-		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.TextBox tbRedOdds;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox tbBlueOdds;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.GroupBox gbInfo;
 	}
 }
 
