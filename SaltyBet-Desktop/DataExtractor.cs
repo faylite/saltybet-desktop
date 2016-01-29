@@ -121,8 +121,8 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		public double GetRedOdds()
 		{
-			int redPot = GetRedPotNum();
-			int bluePot = GetBluePotNum();
+			double redPot = GetRedPotNum();
+			double bluePot = GetBluePotNum();
 
 			if (bluePot >= redPot)
 				return 1.0;
@@ -233,8 +233,8 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		public double GetBlueOdds()
 		{
-			int redPot = GetRedPotNum();
-			int bluePot = GetBluePotNum();
+			double redPot = GetRedPotNum();
+			double bluePot = GetBluePotNum();
 
 			if (redPot >= bluePot)
 				return 1.0;
