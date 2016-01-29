@@ -50,9 +50,31 @@ namespace SaltyBet_Desktop
 		/// <summary>
 		/// Returns the current placed bets on the red side
 		/// </summary>
-		public int GetRedPot()
+		public string GetRedPot()
 		{
-			return 0;
+			// If browser is initialized
+			if (browser.IsBrowserInitialized)
+			{
+				// Run script in a task, p1te returns the amount betted on red in a formatted string with $
+				var task = browser.EvaluateScriptAsync("p1te", null);
+
+				// Run task
+				task.ContinueWith(t =>
+				{
+					if (!t.IsFaulted)
+					{
+						var response = t.Result;
+						// Return response from JS
+						return response.Result.ToString();
+					}
+					return "";
+				}, TaskScheduler.FromCurrentSynchronizationContext());
+				// If return is not null return the result from the task
+				if (task.Result != null)
+					return task.Result.Result.ToString();
+			}
+			// Return empty string if all else fails
+			return "";
 		}
 
 		/// <summary>
@@ -88,9 +110,31 @@ namespace SaltyBet_Desktop
 		/// <summary>
 		/// Returns the current placed bets on the blue side
 		/// </summary>
-		public int GetBluePot()
+		public string GetBluePot()
 		{
-			return 0;
+			// If browser is initialized
+			if (browser.IsBrowserInitialized)
+			{
+				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
+				var task = browser.EvaluateScriptAsync("p2te", null);
+
+				// Run task
+				task.ContinueWith(t =>
+				{
+					if (!t.IsFaulted)
+					{
+						var response = t.Result;
+						// Return response from JS
+						return response.Result.ToString();
+					}
+					return "";
+				}, TaskScheduler.FromCurrentSynchronizationContext());
+				// If return is not null return the result from the task
+				if (task.Result != null)
+					return task.Result.Result.ToString();
+			}
+			// Return empty string if all else fails
+			return "";
 		}
 
 		
