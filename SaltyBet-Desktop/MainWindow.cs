@@ -33,9 +33,8 @@ namespace SaltyBet_Desktop
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			// Don't update if browser is on the wrong page. Or the browser isn't initialized. 
-			if (!browser.IsBrowserInitialized || browser.Address != "http://saltybet.com")
+			if (!browser.IsBrowserInitialized || browser.Address != "http://www.saltybet.com/" || browser.IsLoading)
 				return;
-
 			// Update Red Side
 			this.tbRedName.Text = dataExtractor.GetRedName();
 			this.tbRedPot.Text = dataExtractor.GetRedPot().ToString();
