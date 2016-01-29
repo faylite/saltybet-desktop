@@ -60,9 +60,9 @@
 			this.pInfo.Controls.Add(this.gbBlue);
 			this.pInfo.Controls.Add(this.gbInfo);
 			this.pInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.pInfo.Location = new System.Drawing.Point(0, 475);
+			this.pInfo.Location = new System.Drawing.Point(0, 512);
 			this.pInfo.Name = "pInfo";
-			this.pInfo.Size = new System.Drawing.Size(1227, 273);
+			this.pInfo.Size = new System.Drawing.Size(1210, 273);
 			this.pInfo.TabIndex = 0;
 			// 
 			// gbRed
@@ -77,7 +77,7 @@
 			this.gbRed.Dock = System.Windows.Forms.DockStyle.Right;
 			this.gbRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbRed.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gbRed.Location = new System.Drawing.Point(-3, 0);
+			this.gbRed.Location = new System.Drawing.Point(584, 0);
 			this.gbRed.Name = "gbRed";
 			this.gbRed.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.gbRed.Size = new System.Drawing.Size(313, 273);
@@ -87,6 +87,9 @@
 			// 
 			// tbRedOdds
 			// 
+			this.tbRedOdds.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbRedOdds.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbRedOdds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbRedOdds.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,6 +103,9 @@
 			// 
 			// label6
 			// 
+			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(124, 192);
@@ -112,6 +118,9 @@
 			// 
 			// tbRedPot
 			// 
+			this.tbRedPot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbRedPot.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbRedPot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbRedPot.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +134,9 @@
 			// 
 			// label3
 			// 
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.Location = new System.Drawing.Point(134, 112);
@@ -137,6 +149,9 @@
 			// 
 			// tbRedName
 			// 
+			this.tbRedName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbRedName.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbRedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbRedName.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,6 +165,9 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(67, 28);
@@ -172,7 +190,7 @@
 			this.gbBlue.Dock = System.Windows.Forms.DockStyle.Right;
 			this.gbBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbBlue.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gbBlue.Location = new System.Drawing.Point(310, 0);
+			this.gbBlue.Location = new System.Drawing.Point(897, 0);
 			this.gbBlue.Name = "gbBlue";
 			this.gbBlue.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.gbBlue.Size = new System.Drawing.Size(313, 273);
@@ -182,6 +200,9 @@
 			// 
 			// tbBlueOdds
 			// 
+			this.tbBlueOdds.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBlueOdds.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBlueOdds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbBlueOdds.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,6 +216,9 @@
 			// 
 			// tbBluePot
 			// 
+			this.tbBluePot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBluePot.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBluePot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbBluePot.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,6 +232,9 @@
 			// 
 			// label5
 			// 
+			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(124, 192);
@@ -220,6 +247,9 @@
 			// 
 			// label4
 			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(134, 112);
@@ -232,6 +262,9 @@
 			// 
 			// tbBlueName
 			// 
+			this.tbBlueName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBlueName.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBlueName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbBlueName.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,6 +278,9 @@
 			// 
 			// label2
 			// 
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(67, 32);
@@ -257,23 +293,25 @@
 			// gbInfo
 			// 
 			this.gbInfo.Controls.Add(this.btnUpdate);
-			this.gbInfo.Dock = System.Windows.Forms.DockStyle.Right;
+			this.gbInfo.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbInfo.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gbInfo.Location = new System.Drawing.Point(623, 0);
+			this.gbInfo.Location = new System.Drawing.Point(0, 0);
 			this.gbInfo.Name = "gbInfo";
 			this.gbInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.gbInfo.Size = new System.Drawing.Size(604, 273);
+			this.gbInfo.Size = new System.Drawing.Size(1210, 273);
 			this.gbInfo.TabIndex = 5;
 			this.gbInfo.TabStop = false;
 			this.gbInfo.Text = "Info";
 			// 
 			// btnUpdate
 			// 
+			this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnUpdate.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnUpdate.Location = new System.Drawing.Point(6, 208);
 			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(592, 59);
+			this.btnUpdate.Size = new System.Drawing.Size(572, 59);
 			this.btnUpdate.TabIndex = 0;
 			this.btnUpdate.Text = "Update";
 			this.btnUpdate.UseVisualStyleBackColor = true;
@@ -285,14 +323,14 @@
 			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pMain.Location = new System.Drawing.Point(0, 0);
 			this.pMain.Name = "pMain";
-			this.pMain.Size = new System.Drawing.Size(1227, 475);
+			this.pMain.Size = new System.Drawing.Size(1210, 512);
 			this.pMain.TabIndex = 1;
 			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1227, 748);
+			this.ClientSize = new System.Drawing.Size(1210, 785);
 			this.Controls.Add(this.pMain);
 			this.Controls.Add(this.pInfo);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
