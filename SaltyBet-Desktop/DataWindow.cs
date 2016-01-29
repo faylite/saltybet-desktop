@@ -21,8 +21,8 @@ namespace SaltyBet_Desktop
 		{
 			InitializeComponent();
 
-			UpdateRed(null, 0);
-			UpdateBlue(null, 0);
+			UpdateRed(null, "0");
+			UpdateBlue(null, "0");
 		}
 
 		public DataWindow(ChromiumWebBrowser browser) : this()
@@ -42,14 +42,14 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		/// <param name="characterName"></param>
 		/// <param name="pot"></param>
-		public void UpdateRed(string characterName, int pot)
+		public void UpdateRed(string characterName, string pot)
 		{
 			if (characterName != null)
 				this.tbCharRed.Text = characterName;
 			else
 				this.tbCharRed.Text = "";
 
-			this.tbPotRed.Text = pot.ToString();
+			this.tbPotRed.Text = pot;
 		}
 
 		/// <summary>
@@ -57,14 +57,14 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		/// <param name="characterName"></param>
 		/// <param name="pot"></param>
-		public void UpdateBlue(string characterName, int pot)
+		public void UpdateBlue(string characterName, string pot)
 		{
 			if (characterName != null)
 				this.tbCharBlue.Text = characterName;
 			else
 				this.tbCharBlue.Text = "";
 
-			this.tbPotBlue.Text = pot.ToString();
+			this.tbPotBlue.Text = pot;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
