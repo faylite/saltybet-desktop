@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataExtractor.cs" />
     <Compile Include="DataWindow.cs">
       <SubType>Form</SubType>
     </Compile>

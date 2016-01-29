@@ -14,20 +14,27 @@ namespace SaltyBet_Desktop
 {
 	public partial class MainWindow : Form
 	{
-		public ChromiumWebBrowser browser;
-		public DataWindow dataWindow;
+		private ChromiumWebBrowser browser;
+		private DataWindow dataWindow;
 
 		public MainWindow()
 		{
 			InitializeComponent();
 
+			var settings = new CefSettings();
+
 			Cef.Initialize();
 			browser = new ChromiumWebBrowser("http://saltybet.com");
 			this.Controls.Add(browser);
 			browser.Dock = DockStyle.Fill;
-
-			dataWindow = new DataWindow();
+			
+			dataWindow = new DataWindow(browser);
 			dataWindow.Show();
+		}
+
+		public void Test()
+		{
+			
 		}
 	}
 }

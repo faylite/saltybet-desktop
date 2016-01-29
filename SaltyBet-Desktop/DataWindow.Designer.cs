@@ -29,18 +29,20 @@
 		private void InitializeComponent()
 		{
 			this.gbRed = new System.Windows.Forms.GroupBox();
+			this.tbPotRed = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.tbCharRed = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.gbBlue = new System.Windows.Forms.GroupBox();
-			this.tbCharBlue = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.tbPotRed = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.tbPotBlue = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
+			this.tbCharBlue = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.gbInfo = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.gbRed.SuspendLayout();
 			this.gbBlue.SuspendLayout();
+			this.gbInfo.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gbRed
@@ -56,6 +58,27 @@
 			this.gbRed.TabIndex = 0;
 			this.gbRed.TabStop = false;
 			this.gbRed.Text = "Red";
+			// 
+			// tbPotRed
+			// 
+			this.tbPotRed.Location = new System.Drawing.Point(6, 109);
+			this.tbPotRed.Name = "tbPotRed";
+			this.tbPotRed.ReadOnly = true;
+			this.tbPotRed.Size = new System.Drawing.Size(256, 26);
+			this.tbPotRed.TabIndex = 3;
+			this.tbPotRed.Text = "0";
+			this.tbPotRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(116, 88);
+			this.label3.Name = "label3";
+			this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label3.Size = new System.Drawing.Size(35, 18);
+			this.label3.TabIndex = 2;
+			this.label3.Text = "Pot";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tbCharRed
 			// 
@@ -93,47 +116,6 @@
 			this.gbBlue.TabStop = false;
 			this.gbBlue.Text = "Blue";
 			// 
-			// tbCharBlue
-			// 
-			this.tbCharBlue.Location = new System.Drawing.Point(6, 53);
-			this.tbCharBlue.Name = "tbCharBlue";
-			this.tbCharBlue.ReadOnly = true;
-			this.tbCharBlue.Size = new System.Drawing.Size(256, 26);
-			this.tbCharBlue.TabIndex = 1;
-			this.tbCharBlue.Text = "0";
-			this.tbCharBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(61, 32);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(140, 18);
-			this.label2.TabIndex = 0;
-			this.label2.Text = "Character Name";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// tbPotRed
-			// 
-			this.tbPotRed.Location = new System.Drawing.Point(6, 109);
-			this.tbPotRed.Name = "tbPotRed";
-			this.tbPotRed.ReadOnly = true;
-			this.tbPotRed.Size = new System.Drawing.Size(256, 26);
-			this.tbPotRed.TabIndex = 3;
-			this.tbPotRed.Text = "0";
-			this.tbPotRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(116, 88);
-			this.label3.Name = "label3";
-			this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label3.Size = new System.Drawing.Size(35, 18);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Pot";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// tbPotBlue
 			// 
 			this.tbPotBlue.Location = new System.Drawing.Point(7, 109);
@@ -155,17 +137,48 @@
 			this.label4.Text = "Pot";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// tbCharBlue
+			// 
+			this.tbCharBlue.Location = new System.Drawing.Point(6, 53);
+			this.tbCharBlue.Name = "tbCharBlue";
+			this.tbCharBlue.ReadOnly = true;
+			this.tbCharBlue.Size = new System.Drawing.Size(256, 26);
+			this.tbCharBlue.TabIndex = 1;
+			this.tbCharBlue.Text = "0";
+			this.tbCharBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(61, 32);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(140, 18);
+			this.label2.TabIndex = 0;
+			this.label2.Text = "Character Name";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// gbInfo
 			// 
 			this.gbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.gbInfo.Controls.Add(this.button1);
 			this.gbInfo.Location = new System.Drawing.Point(6, 161);
 			this.gbInfo.Name = "gbInfo";
 			this.gbInfo.Size = new System.Drawing.Size(542, 222);
 			this.gbInfo.TabIndex = 2;
 			this.gbInfo.TabStop = false;
 			this.gbInfo.Text = "Info";
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(7, 151);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(523, 59);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "Update";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// DataWindow
 			// 
@@ -181,6 +194,7 @@
 			this.gbRed.PerformLayout();
 			this.gbBlue.ResumeLayout(false);
 			this.gbBlue.PerformLayout();
+			this.gbInfo.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -198,5 +212,6 @@
 		private System.Windows.Forms.TextBox tbPotBlue;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.GroupBox gbInfo;
+		private System.Windows.Forms.Button button1;
 	}
 }

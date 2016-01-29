@@ -7,14 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace SaltyBet_Desktop
 {
 	public partial class DataWindow : Form
 	{
+		private ChromiumWebBrowser browser;
+		private DataExtractor dataExtractor;
+
 		public DataWindow()
 		{
 			InitializeComponent();
+
+			UpdateRed(null, 0);
+			UpdateBlue(null, 0);
+		}
+
+		public DataWindow(ChromiumWebBrowser browser) : this()
+		{
+			this.browser = browser;
+			this.dataExtractor = new DataExtractor(this.browser);
+		}
+
+		public void UpdateData()
+		{
+			UpdateRed(dataExtractor.GetRedName(), dataExtractor.GetRedPot());
+			UpdateBlue(dataExtractor.GetBlueName(), dataExtractor.GetBluePot());
 		}
 
 		/// <summary>
@@ -45,6 +65,11 @@ namespace SaltyBet_Desktop
 				this.tbCharBlue.Text = "";
 
 			this.tbPotBlue.Text = pot.ToString();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			UpdateData();
 		}
 	}
 }
