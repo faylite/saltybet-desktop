@@ -119,7 +119,7 @@ namespace SaltyBet_Desktop
 		/// <summary>
 		/// Returns the odds based on pot for the red character
 		/// </summary>
-		public double GetBlueOdds()
+		public double GetRedOdds()
 		{
 			int redPot = GetRedPotNum();
 			int bluePot = GetBluePotNum();
