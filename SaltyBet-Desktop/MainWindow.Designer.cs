@@ -31,18 +31,18 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.pInfo = new System.Windows.Forms.Panel();
 			this.gbRed = new System.Windows.Forms.GroupBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.tbRedOdds = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.tbPotRed = new System.Windows.Forms.TextBox();
+			this.tbRedPot = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.tbCharRed = new System.Windows.Forms.TextBox();
+			this.tbRedName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.gbBlue = new System.Windows.Forms.GroupBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.tbPotBlue = new System.Windows.Forms.TextBox();
+			this.tbBlueOdds = new System.Windows.Forms.TextBox();
+			this.tbBluePot = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.tbCharBlue = new System.Windows.Forms.TextBox();
+			this.tbBlueName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.gbInfo = new System.Windows.Forms.GroupBox();
 			this.btnUpdate = new System.Windows.Forms.Button();
@@ -68,11 +68,11 @@
 			// gbRed
 			// 
 			this.gbRed.BackColor = System.Drawing.Color.Crimson;
-			this.gbRed.Controls.Add(this.textBox2);
+			this.gbRed.Controls.Add(this.tbRedOdds);
 			this.gbRed.Controls.Add(this.label6);
-			this.gbRed.Controls.Add(this.tbPotRed);
+			this.gbRed.Controls.Add(this.tbRedPot);
 			this.gbRed.Controls.Add(this.label3);
-			this.gbRed.Controls.Add(this.tbCharRed);
+			this.gbRed.Controls.Add(this.tbRedName);
 			this.gbRed.Controls.Add(this.label1);
 			this.gbRed.Dock = System.Windows.Forms.DockStyle.Right;
 			this.gbRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -85,43 +85,43 @@
 			this.gbRed.TabStop = false;
 			this.gbRed.Text = "Red";
 			// 
-			// textBox2
+			// tbRedOdds
 			// 
-			this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox2.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(6, 227);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(301, 34);
-			this.textBox2.TabIndex = 9;
-			this.textBox2.Text = "0";
-			this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.tbRedOdds.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbRedOdds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbRedOdds.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbRedOdds.Location = new System.Drawing.Point(6, 227);
+			this.tbRedOdds.Name = "tbRedOdds";
+			this.tbRedOdds.ReadOnly = true;
+			this.tbRedOdds.Size = new System.Drawing.Size(301, 34);
+			this.tbRedOdds.TabIndex = 9;
+			this.tbRedOdds.Text = "0";
+			this.tbRedOdds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(134, 192);
+			this.label6.Location = new System.Drawing.Point(124, 192);
 			this.label6.Name = "label6";
 			this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label6.Size = new System.Drawing.Size(44, 26);
+			this.label6.Size = new System.Drawing.Size(64, 26);
 			this.label6.TabIndex = 8;
-			this.label6.Text = "Pot";
+			this.label6.Text = "Odds";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// tbPotRed
+			// tbRedPot
 			// 
-			this.tbPotRed.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.tbPotRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbPotRed.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbPotRed.Location = new System.Drawing.Point(6, 146);
-			this.tbPotRed.Name = "tbPotRed";
-			this.tbPotRed.ReadOnly = true;
-			this.tbPotRed.Size = new System.Drawing.Size(301, 34);
-			this.tbPotRed.TabIndex = 3;
-			this.tbPotRed.Text = "0";
-			this.tbPotRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.tbRedPot.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbRedPot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbRedPot.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbRedPot.Location = new System.Drawing.Point(6, 146);
+			this.tbRedPot.Name = "tbRedPot";
+			this.tbRedPot.ReadOnly = true;
+			this.tbRedPot.Size = new System.Drawing.Size(301, 34);
+			this.tbRedPot.TabIndex = 3;
+			this.tbRedPot.Text = "0";
+			this.tbRedPot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label3
 			// 
@@ -135,18 +135,18 @@
 			this.label3.Text = "Pot";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// tbCharRed
+			// tbRedName
 			// 
-			this.tbCharRed.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.tbCharRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbCharRed.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbCharRed.Location = new System.Drawing.Point(6, 67);
-			this.tbCharRed.Name = "tbCharRed";
-			this.tbCharRed.ReadOnly = true;
-			this.tbCharRed.Size = new System.Drawing.Size(301, 34);
-			this.tbCharRed.TabIndex = 1;
-			this.tbCharRed.Text = "0";
-			this.tbCharRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.tbRedName.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbRedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbRedName.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbRedName.Location = new System.Drawing.Point(6, 67);
+			this.tbRedName.Name = "tbRedName";
+			this.tbRedName.ReadOnly = true;
+			this.tbRedName.Size = new System.Drawing.Size(301, 34);
+			this.tbRedName.TabIndex = 1;
+			this.tbRedName.Text = "0";
+			this.tbRedName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label1
 			// 
@@ -163,11 +163,11 @@
 			// gbBlue
 			// 
 			this.gbBlue.BackColor = System.Drawing.Color.RoyalBlue;
-			this.gbBlue.Controls.Add(this.textBox1);
-			this.gbBlue.Controls.Add(this.tbPotBlue);
+			this.gbBlue.Controls.Add(this.tbBlueOdds);
+			this.gbBlue.Controls.Add(this.tbBluePot);
 			this.gbBlue.Controls.Add(this.label5);
 			this.gbBlue.Controls.Add(this.label4);
-			this.gbBlue.Controls.Add(this.tbCharBlue);
+			this.gbBlue.Controls.Add(this.tbBlueName);
 			this.gbBlue.Controls.Add(this.label2);
 			this.gbBlue.Dock = System.Windows.Forms.DockStyle.Right;
 			this.gbBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -180,42 +180,42 @@
 			this.gbBlue.TabStop = false;
 			this.gbBlue.Text = "Blue";
 			// 
-			// textBox1
+			// tbBlueOdds
 			// 
-			this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox1.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(6, 227);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(301, 34);
-			this.textBox1.TabIndex = 7;
-			this.textBox1.Text = "0";
-			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.tbBlueOdds.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbBlueOdds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBlueOdds.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbBlueOdds.Location = new System.Drawing.Point(6, 227);
+			this.tbBlueOdds.Name = "tbBlueOdds";
+			this.tbBlueOdds.ReadOnly = true;
+			this.tbBlueOdds.Size = new System.Drawing.Size(301, 34);
+			this.tbBlueOdds.TabIndex = 7;
+			this.tbBlueOdds.Text = "0";
+			this.tbBlueOdds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// tbPotBlue
+			// tbBluePot
 			// 
-			this.tbPotBlue.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.tbPotBlue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbPotBlue.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbPotBlue.Location = new System.Drawing.Point(6, 146);
-			this.tbPotBlue.Name = "tbPotBlue";
-			this.tbPotBlue.ReadOnly = true;
-			this.tbPotBlue.Size = new System.Drawing.Size(301, 34);
-			this.tbPotBlue.TabIndex = 5;
-			this.tbPotBlue.Text = "0";
-			this.tbPotBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.tbBluePot.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbBluePot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBluePot.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbBluePot.Location = new System.Drawing.Point(6, 146);
+			this.tbBluePot.Name = "tbBluePot";
+			this.tbBluePot.ReadOnly = true;
+			this.tbBluePot.Size = new System.Drawing.Size(301, 34);
+			this.tbBluePot.TabIndex = 5;
+			this.tbBluePot.Text = "0";
+			this.tbBluePot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(134, 192);
+			this.label5.Location = new System.Drawing.Point(124, 192);
 			this.label5.Name = "label5";
 			this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label5.Size = new System.Drawing.Size(44, 26);
+			this.label5.Size = new System.Drawing.Size(64, 26);
 			this.label5.TabIndex = 6;
-			this.label5.Text = "Pot";
+			this.label5.Text = "Odds";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label4
@@ -230,18 +230,18 @@
 			this.label4.Text = "Pot";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// tbCharBlue
+			// tbBlueName
 			// 
-			this.tbCharBlue.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.tbCharBlue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbCharBlue.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbCharBlue.Location = new System.Drawing.Point(6, 67);
-			this.tbCharBlue.Name = "tbCharBlue";
-			this.tbCharBlue.ReadOnly = true;
-			this.tbCharBlue.Size = new System.Drawing.Size(301, 34);
-			this.tbCharBlue.TabIndex = 1;
-			this.tbCharBlue.Text = "0";
-			this.tbCharBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.tbBlueName.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbBlueName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBlueName.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbBlueName.Location = new System.Drawing.Point(6, 67);
+			this.tbBlueName.Name = "tbBlueName";
+			this.tbBlueName.ReadOnly = true;
+			this.tbBlueName.Size = new System.Drawing.Size(301, 34);
+			this.tbBlueName.TabIndex = 1;
+			this.tbBlueName.Text = "0";
+			this.tbBlueName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label2
 			// 
@@ -313,20 +313,20 @@
 		private System.Windows.Forms.Panel pInfo;
 		private System.Windows.Forms.Panel pMain;
 		private System.Windows.Forms.GroupBox gbRed;
-		private System.Windows.Forms.TextBox tbPotRed;
+		private System.Windows.Forms.TextBox tbRedPot;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox tbCharRed;
+		private System.Windows.Forms.TextBox tbRedName;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox gbBlue;
-		private System.Windows.Forms.TextBox tbPotBlue;
+		private System.Windows.Forms.TextBox tbBluePot;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox tbCharBlue;
+		private System.Windows.Forms.TextBox tbBlueName;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox gbInfo;
 		private System.Windows.Forms.Button btnUpdate;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox tbRedOdds;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox tbBlueOdds;
 		private System.Windows.Forms.Label label5;
 	}
 }
