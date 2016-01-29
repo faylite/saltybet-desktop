@@ -78,6 +78,58 @@ namespace SaltyBet_Desktop
 		}
 
 		/// <summary>
+		/// Returns the current red pot as an integer, or returns 0 if the current pot could not be found
+		/// </summary>
+		/// <returns></returns>
+		public int GetRedPotNum()
+		{
+			// If browser is initialized
+			if (browser.IsBrowserInitialized)
+			{
+				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
+				var task = browser.EvaluateScriptAsync("p1to", null);
+
+				// Run task
+				task.ContinueWith(t =>
+				{
+					if (!t.IsFaulted)
+					{
+						var response = t.Result;
+						// Return response from JS
+						return response.Result.ToString();
+					}
+					return "0";
+				}, TaskScheduler.FromCurrentSynchronizationContext());
+				// If return is not null return the result from the task
+				if (task.Result != null)
+				{
+					int x = 0;
+					if (Int32.TryParse(task.Result.Result.ToString(), out x))
+					{
+						return x;
+					}
+					else
+						return 0;
+				}
+			}
+			// Return empty string if all else fails
+			return 0;
+		}
+
+		/// <summary>
+		/// Returns the odds based on pot for the red character
+		/// </summary>
+		public double GetBlueOdds()
+		{
+			int redPot = GetRedPotNum();
+			int bluePot = GetBluePotNum();
+
+			if (bluePot >= redPot)
+				return 1.0;
+			else
+				return redPot / bluePot;
+		}
+		/// <summary>
 		/// Returns the name of the blue character/team
 		/// </summary>
 		public string GetBlueName()
@@ -137,6 +189,57 @@ namespace SaltyBet_Desktop
 			return "";
 		}
 
-		
+		/// <summary>
+		/// Returns the current blue pot as an integer, or returns 0 if the current pot could not be found
+		/// </summary>
+		/// <returns></returns>
+		public int GetBluePotNum()
+		{
+			// If browser is initialized
+			if (browser.IsBrowserInitialized)
+			{
+				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
+				var task = browser.EvaluateScriptAsync("p2to", null);
+
+				// Run task
+				task.ContinueWith(t =>
+				{
+					if (!t.IsFaulted)
+					{
+						var response = t.Result;
+						// Return response from JS
+						return response.Result.ToString();
+					}
+					return "0";
+				}, TaskScheduler.FromCurrentSynchronizationContext());
+				// If return is not null return the result from the task
+				if (task.Result != null)
+				{
+					int x = 0;
+					if (Int32.TryParse(task.Result.Result.ToString(), out x))
+					{
+						return x;
+					}
+					else
+						return 0;
+				}
+			}
+			// Return empty string if all else fails
+			return 0;
+		}
+
+		/// <summary>
+		/// Returns the odds based on pot for the blue character
+		/// </summary>
+		public double GetBlueOdds()
+		{
+			int redPot = GetRedPotNum();
+			int bluePot = GetBluePotNum();
+
+			if (redPot >= bluePot)
+				return 1.0;
+			else
+				return bluePot / redPot;
+		}
 	}
 }
