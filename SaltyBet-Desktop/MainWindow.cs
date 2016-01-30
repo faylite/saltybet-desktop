@@ -17,7 +17,7 @@ namespace SaltyBet_Desktop
 	{
 		private ChromiumWebBrowser browser;
 		private DataExtractor dataExtractor;
-		private System.Threading.Thread refreshThread;
+		private Thread refreshThread;
 
 		public MainWindow()
 		{
@@ -31,7 +31,7 @@ namespace SaltyBet_Desktop
 
 			dataExtractor = new DataExtractor(this.browser);
 
-			refreshThread = new System.Threading.Thread(refreshLoop);
+			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
 		}
 
