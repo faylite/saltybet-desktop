@@ -22,29 +22,7 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		public string GetRedName()
 		{
-			// If browser is initialized
-			if (browser.IsBrowserInitialized)
-			{
-				// Run script in a task, p1n simply returns red name
-				var task = browser.EvaluateScriptAsync("p1n", null);
-
-				// Run task
-				task.ContinueWith(t =>
-				{
-					if (!t.IsFaulted)
-					{
-						var response = t.Result;
-						// Return response from JS
-						return response.Result.ToString();
-					}
-					return "";
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-				// If return is not null return the result from the task
-				if (task.Result != null)
-					return task.Result.Result.ToString();
-			}
-			// Return empty string if all else fails
-			return "";
+			return executeJS("p1n");
 		}
 
 		/// <summary>
@@ -52,29 +30,7 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		public string GetRedPot()
 		{
-			// If browser is initialized
-			if (browser.IsBrowserInitialized)
-			{
-				// Run script in a task, p1te returns the amount betted on red in a formatted string with $
-				var task = browser.EvaluateScriptAsync("p1te", null);
-
-				// Run task
-				task.ContinueWith(t =>
-				{
-					if (!t.IsFaulted)
-					{
-						var response = t.Result;
-						// Return response from JS
-						return response.Result.ToString();
-					}
-					return "";
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-				// If return is not null return the result from the task
-				if (task.Result != null)
-					return task.Result.Result.ToString();
-			}
-			// Return empty string if all else fails
-			return "";
+			return executeJS("p1te");
 		}
 
 		/// <summary>
@@ -83,37 +39,13 @@ namespace SaltyBet_Desktop
 		/// <returns></returns>
 		public int GetRedPotNum()
 		{
-			// If browser is initialized
-			if (browser.IsBrowserInitialized)
-			{
-				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
-				var task = browser.EvaluateScriptAsync("p1to", null);
+			string redPot = executeJS("p1to");
 
-				// Run task
-				task.ContinueWith(t =>
-				{
-					if (!t.IsFaulted)
-					{
-						var response = t.Result;
-						// Return response from JS
-						return response.Result.ToString();
-					}
-					return "0";
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-				// If return is not null return the result from the task
-				if (task.Result != null)
-				{
-					int x = 0;
-					if (Int32.TryParse(task.Result.Result.ToString(), out x))
-					{
-						return x;
-					}
-					else
-						return 0;
-				}
-			}
-			// Return empty string if all else fails
-			return 0;
+			int x = 0;
+			if (Int32.TryParse(redPot, out x))
+				return x;
+			else
+				return 0;
 		}
 
 		/// <summary>
@@ -129,34 +61,13 @@ namespace SaltyBet_Desktop
 			else
 				return redPot / bluePot;
 		}
+
 		/// <summary>
 		/// Returns the name of the blue character/team
 		/// </summary>
 		public string GetBlueName()
 		{
-			// If browser is initialized
-			if (browser.IsBrowserInitialized)
-			{
-				// Run script in a task, p1n simply returns red name
-				var task = browser.EvaluateScriptAsync("p2n", null);
-
-				// Run task
-				task.ContinueWith(t =>
-				{
-					if (!t.IsFaulted)
-					{
-						var response = t.Result;
-						// Return response from JS
-						return response.Result.ToString();
-					}
-					return "";
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-				// If return is not null return the result from the task
-				if (task.Result != null)
-					return task.Result.Result.ToString();
-			}
-			// Return empty string if all else fails
-			return "";
+			return executeJS("p2n");
 		}
 
 		/// <summary>
@@ -164,29 +75,8 @@ namespace SaltyBet_Desktop
 		/// </summary>
 		public string GetBluePot()
 		{
-			// If browser is initialized
-			if (browser.IsBrowserInitialized)
-			{
-				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
-				var task = browser.EvaluateScriptAsync("p2te", null);
-
-				// Run task
-				task.ContinueWith(t =>
-				{
-					if (!t.IsFaulted)
-					{
-						var response = t.Result;
-						// Return response from JS
-						return response.Result.ToString();
-					}
-					return "";
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-				// If return is not null return the result from the task
-				if (task.Result != null)
-					return task.Result.Result.ToString();
-			}
-			// Return empty string if all else fails
-			return "";
+			// p1te returns the amount betted on blue in a string
+			return executeJS("p2te");
 		}
 
 		/// <summary>
@@ -195,37 +85,16 @@ namespace SaltyBet_Desktop
 		/// <returns></returns>
 		public int GetBluePotNum()
 		{
-			// If browser is initialized
-			if (browser.IsBrowserInitialized)
-			{
-				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
-				var task = browser.EvaluateScriptAsync("p2to", null);
-
-				// Run task
-				task.ContinueWith(t =>
-				{
-					if (!t.IsFaulted)
-					{
-						var response = t.Result;
-						// Return response from JS
-						return response.Result.ToString();
-					}
-					return "0";
-				}, TaskScheduler.FromCurrentSynchronizationContext());
-				// If return is not null return the result from the task
-				if (task.Result != null)
-				{
-					int x = 0;
-					if (Int32.TryParse(task.Result.Result.ToString(), out x))
-					{
-						return x;
-					}
-					else
-						return 0;
-				}
-			}
-			// Return empty string if all else fails
-			return 0;
+			// Execute JavaScript and get the return
+			// p2to returns the amount betted on blue side
+			string bluePot = executeJS("p2to");
+			
+			// Parse the return into an integer
+			int x = 0;
+			if (Int32.TryParse(bluePot, out x))
+				return x;
+			else
+				return 0;
 		}
 
 		/// <summary>
@@ -240,6 +109,37 @@ namespace SaltyBet_Desktop
 				return 1.0;
 			else
 				return bluePot / redPot;
+		}
+
+		/// <summary>
+		/// Executes js and returns the output as a string
+		/// </summary>
+		/// <param name="script">The JavaScript to execute</param>
+		/// <returns>Output from JavaScript</returns>
+		private string executeJS(string script)
+		{
+			// If browser is initialized
+			if (browser.IsBrowserInitialized)
+			{
+				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
+				var task = browser.EvaluateScriptAsync(script, null);
+
+				// Run task
+				task.ContinueWith(t =>
+				{
+					if (!t.IsFaulted)
+					{
+						var response = t.Result;
+						// Return response from JS
+						return response.Result.ToString();
+					}
+					return "0";
+				}, TaskScheduler.FromCurrentSynchronizationContext());
+				// If return is not null return the result from the task
+				if (task.Result != null)
+					return task.Result.Result.ToString();
+			}
+			return "";
 		}
 	}
 }
