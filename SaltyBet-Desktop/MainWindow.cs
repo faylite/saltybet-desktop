@@ -35,11 +35,9 @@ namespace SaltyBet_Desktop
 			refreshThread.Start();
 		}
 
-		private void btnUpdate_Click(object sender, EventArgs e)
-		{
-			refresh();
-		}
-
+		/// <summary>
+		/// Updates the textboxes with new data from saltybet site.
+		/// </summary>
 		private void refresh()
 		{
 			// Don't update if browser is on the wrong page. Or the browser isn't initialized. 
@@ -56,6 +54,9 @@ namespace SaltyBet_Desktop
 			this.tbBlueOdds.Text = dataExtractor.GetBlueOdds().ToString();
 		}
 
+		/// <summary>
+		/// A loop for the refresh thread, calls refresh() every second.
+		/// </summary>
 		private void refreshLoop()
 		{
 			while (true)
