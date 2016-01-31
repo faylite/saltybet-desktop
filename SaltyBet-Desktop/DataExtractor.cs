@@ -112,6 +112,37 @@ namespace SaltyBet_Desktop
 		}
 
 		/// <summary>
+		/// Returns the current salt balance
+		/// </summary>
+		/// <returns></returns>
+		public int GetSaltBalanceNum()
+		{
+			int x = 0;
+			if (Int32.TryParse(executeJS("balance"), out x))
+				return x;
+			else
+				return 0;
+		}
+
+		/// <summary>
+		/// Returns the state of the bets
+		/// </summary>
+		/// <returns>Returns either "open" or "closed"</returns>
+		public string GetBetStatus()
+		{
+			return executeJS("betstate");
+		}
+
+		/// <summary>
+		/// Returns a message of how many matches are left until the next tournament
+		/// </summary>
+		/// <returns>Returns a sentence, not a number</returns>
+		public string GetRemainingMatches()
+		{
+			return executeJS("remaining");
+		}
+
+		/// <summary>
 		/// Executes js and returns the output as a string
 		/// </summary>
 		/// <param name="script">The JavaScript to execute</param>

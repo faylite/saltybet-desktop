@@ -30,11 +30,11 @@
 		{
 			System.Windows.Forms.Panel pInfo;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.tbBetStatus = new System.Windows.Forms.TextBox();
 			this.lbBetStatus = new System.Windows.Forms.Label();
 			this.tbSaltBalance = new System.Windows.Forms.TextBox();
 			this.lbSaltBalance = new System.Windows.Forms.Label();
-			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.pMain = new System.Windows.Forms.Panel();
 			this.pBlue = new System.Windows.Forms.Panel();
 			this.tbBlueOdds = new System.Windows.Forms.TextBox();
@@ -69,6 +69,18 @@
 			pInfo.Name = "pInfo";
 			pInfo.Size = new System.Drawing.Size(464, 785);
 			pInfo.TabIndex = 2;
+			// 
+			// btnOpenDevTools
+			// 
+			this.btnOpenDevTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnOpenDevTools.Location = new System.Drawing.Point(6, 705);
+			this.btnOpenDevTools.Name = "btnOpenDevTools";
+			this.btnOpenDevTools.Size = new System.Drawing.Size(452, 68);
+			this.btnOpenDevTools.TabIndex = 0;
+			this.btnOpenDevTools.Text = "Open Dev Tools";
+			this.btnOpenDevTools.UseVisualStyleBackColor = true;
+			this.btnOpenDevTools.Click += new System.EventHandler(this.btnOpenDevTools_Click);
 			// 
 			// tbBetStatus
 			// 
@@ -129,17 +141,6 @@
 			this.lbSaltBalance.TabIndex = 14;
 			this.lbSaltBalance.Text = "Salt Balance";
 			this.lbSaltBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// btnOpenDevTools
-			// 
-			this.btnOpenDevTools.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnOpenDevTools.Location = new System.Drawing.Point(6, 705);
-			this.btnOpenDevTools.Name = "btnOpenDevTools";
-			this.btnOpenDevTools.Size = new System.Drawing.Size(452, 68);
-			this.btnOpenDevTools.TabIndex = 0;
-			this.btnOpenDevTools.Text = "Open Dev Tools";
-			this.btnOpenDevTools.UseVisualStyleBackColor = true;
-			this.btnOpenDevTools.Click += new System.EventHandler(this.btnOpenDevTools_Click);
 			// 
 			// pMain
 			// 

@@ -56,6 +56,10 @@ namespace SaltyBet_Desktop
 			this.tbBlueName.Text = dataExtractor.GetBlueName();
 			this.tbBluePot.Text = dataExtractor.GetBluePot().ToString();
 			this.tbBlueOdds.Text = dataExtractor.GetBlueOdds().ToString();
+
+			// Update info
+			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
+			this.tbBetStatus.Text = dataExtractor.GetBetStatus();
 		}
 
 		/// <summary>
