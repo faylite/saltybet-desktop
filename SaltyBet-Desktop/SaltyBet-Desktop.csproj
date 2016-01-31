@@ -72,12 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataExtractor.cs" />
-    <Compile Include="DataWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DataWindow.Designer.cs">
-      <DependentUpon>DataWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="DomInteractor.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -87,9 +81,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataWindow.resx">
-      <DependentUpon>DataWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
