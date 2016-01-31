@@ -119,7 +119,7 @@ namespace SaltyBet_Desktop
 		private string executeJS(string script)
 		{
 			// If browser is initialized
-			if (!browser.IsBrowserInitialized)
+			if (browser.IsBrowserInitialized)
 			{
 				// Run script in a task, p1te returns the amount betted on blue in a formatted string with $
 				var task = browser.EvaluateScriptAsync(script, null);
