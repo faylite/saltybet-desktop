@@ -26,7 +26,7 @@ namespace SaltyBet_Desktop
 			var settings = new CefSettings();
 
 			Cef.Initialize(settings);
-			browser = new ChromiumWebBrowser("D:\\Dev\\projects\\JavaScript\\Portfolio-Static");
+			browser = new ChromiumWebBrowser("http://saltybet.com");
 			this.pMain.Controls.Add(browser);
 			browser.Dock = DockStyle.Fill;
 
