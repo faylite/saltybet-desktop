@@ -28,8 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.Panel pInfo;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-			this.pInfo = new System.Windows.Forms.Panel();
+			this.tbBetStatus = new System.Windows.Forms.TextBox();
+			this.lbBetStatus = new System.Windows.Forms.Label();
+			this.tbSaltBalance = new System.Windows.Forms.TextBox();
+			this.lbSaltBalance = new System.Windows.Forms.Label();
+			this.pBottom = new System.Windows.Forms.Panel();
 			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.pMain = new System.Windows.Forms.Panel();
 			this.pBlue = new System.Windows.Forms.Panel();
@@ -46,7 +51,9 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.tbRedName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pInfo.SuspendLayout();
+			pInfo = new System.Windows.Forms.Panel();
+			pInfo.SuspendLayout();
+			this.pBottom.SuspendLayout();
 			this.pMain.SuspendLayout();
 			this.pBlue.SuspendLayout();
 			this.pRed.SuspendLayout();
@@ -54,13 +61,87 @@
 			// 
 			// pInfo
 			// 
-			this.pInfo.BackColor = System.Drawing.Color.Transparent;
-			this.pInfo.Controls.Add(this.btnOpenDevTools);
-			this.pInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.pInfo.Location = new System.Drawing.Point(0, 512);
-			this.pInfo.Name = "pInfo";
-			this.pInfo.Size = new System.Drawing.Size(1210, 273);
-			this.pInfo.TabIndex = 0;
+			pInfo.Controls.Add(this.tbBetStatus);
+			pInfo.Controls.Add(this.lbBetStatus);
+			pInfo.Controls.Add(this.tbSaltBalance);
+			pInfo.Controls.Add(this.lbSaltBalance);
+			pInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+			pInfo.Location = new System.Drawing.Point(373, 0);
+			pInfo.Name = "pInfo";
+			pInfo.Size = new System.Drawing.Size(464, 512);
+			pInfo.TabIndex = 2;
+			// 
+			// tbBetStatus
+			// 
+			this.tbBetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbBetStatus.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbBetStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBetStatus.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbBetStatus.Location = new System.Drawing.Point(6, 125);
+			this.tbBetStatus.Name = "tbBetStatus";
+			this.tbBetStatus.ReadOnly = true;
+			this.tbBetStatus.Size = new System.Drawing.Size(452, 34);
+			this.tbBetStatus.TabIndex = 17;
+			this.tbBetStatus.Text = "0";
+			this.tbBetStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// lbBetStatus
+			// 
+			this.lbBetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbBetStatus.AutoSize = true;
+			this.lbBetStatus.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbBetStatus.Location = new System.Drawing.Point(174, 91);
+			this.lbBetStatus.Name = "lbBetStatus";
+			this.lbBetStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.lbBetStatus.Size = new System.Drawing.Size(117, 26);
+			this.lbBetStatus.TabIndex = 16;
+			this.lbBetStatus.Text = "Bet Status";
+			this.lbBetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// tbSaltBalance
+			// 
+			this.tbSaltBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbSaltBalance.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.tbSaltBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbSaltBalance.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbSaltBalance.Location = new System.Drawing.Point(6, 38);
+			this.tbSaltBalance.Name = "tbSaltBalance";
+			this.tbSaltBalance.ReadOnly = true;
+			this.tbSaltBalance.Size = new System.Drawing.Size(452, 34);
+			this.tbSaltBalance.TabIndex = 15;
+			this.tbSaltBalance.Text = "0";
+			this.tbSaltBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// lbSaltBalance
+			// 
+			this.lbSaltBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbSaltBalance.AutoSize = true;
+			this.lbSaltBalance.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbSaltBalance.Location = new System.Drawing.Point(164, 9);
+			this.lbSaltBalance.Name = "lbSaltBalance";
+			this.lbSaltBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.lbSaltBalance.Size = new System.Drawing.Size(136, 26);
+			this.lbSaltBalance.TabIndex = 14;
+			this.lbSaltBalance.Text = "Salt Balance";
+			this.lbSaltBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pBottom
+			// 
+			this.pBottom.BackColor = System.Drawing.Color.Transparent;
+			this.pBottom.Controls.Add(this.btnOpenDevTools);
+			this.pBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.pBottom.Location = new System.Drawing.Point(0, 512);
+			this.pBottom.Name = "pBottom";
+			this.pBottom.Size = new System.Drawing.Size(1210, 273);
+			this.pBottom.TabIndex = 0;
 			// 
 			// btnOpenDevTools
 			// 
@@ -75,6 +156,7 @@
 			// pMain
 			// 
 			this.pMain.BackColor = System.Drawing.Color.Transparent;
+			this.pMain.Controls.Add(pInfo);
 			this.pMain.Controls.Add(this.pBlue);
 			this.pMain.Controls.Add(this.pRed);
 			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,7 +164,6 @@
 			this.pMain.Name = "pMain";
 			this.pMain.Size = new System.Drawing.Size(1210, 512);
 			this.pMain.TabIndex = 1;
-			this.pMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pMain_Paint);
 			// 
 			// pBlue
 			// 
@@ -306,12 +387,14 @@
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1210, 785);
 			this.Controls.Add(this.pMain);
-			this.Controls.Add(this.pInfo);
+			this.Controls.Add(this.pBottom);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
 			this.Text = "SaltyBot";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
-			this.pInfo.ResumeLayout(false);
+			pInfo.ResumeLayout(false);
+			pInfo.PerformLayout();
+			this.pBottom.ResumeLayout(false);
 			this.pMain.ResumeLayout(false);
 			this.pBlue.ResumeLayout(false);
 			this.pBlue.PerformLayout();
@@ -323,7 +406,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Panel pInfo;
+		private System.Windows.Forms.Panel pBottom;
 		private System.Windows.Forms.Panel pMain;
 		private System.Windows.Forms.Button btnOpenDevTools;
 		private System.Windows.Forms.Panel pBlue;
@@ -340,6 +423,10 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox tbBluePot;
 		private System.Windows.Forms.TextBox tbBlueOdds;
+		private System.Windows.Forms.Label lbSaltBalance;
+		private System.Windows.Forms.TextBox tbSaltBalance;
+		private System.Windows.Forms.Label lbBetStatus;
+		private System.Windows.Forms.TextBox tbBetStatus;
 	}
 }
 
