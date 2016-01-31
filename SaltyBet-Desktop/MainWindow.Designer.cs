@@ -323,7 +323,9 @@
 			this.Controls.Add(this.pInfo);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SaltyBot";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
 			this.pInfo.ResumeLayout(false);
 			this.gbRed.ResumeLayout(false);
 			this.gbRed.PerformLayout();

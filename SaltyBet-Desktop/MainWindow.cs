@@ -65,5 +65,11 @@ namespace SaltyBet_Desktop
 				BeginInvoke(new MethodInvoker(refresh));
 			}
 		}
+
+		private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			refreshThread.Abort();
+			Cef.Shutdown();
+		}
 	}
 }
