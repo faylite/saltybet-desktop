@@ -93,5 +93,10 @@ namespace SaltyBet_Desktop
 			// Shutdown the embedded framework
 			Cef.Shutdown();
 		}
+
+		private void pMain_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }
