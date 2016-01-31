@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using CefSharp;
-using CefSharp.OffScreen;
+using CefSharp.WinForms;
 
 namespace SaltyBet_Desktop
 {
@@ -18,8 +18,6 @@ namespace SaltyBet_Desktop
 		private ChromiumWebBrowser browser;
 		private DataExtractor dataExtractor;
 		private Thread refreshThread;
-
-		private bool cleanupDone;
 
 		public MainWindow()
 		{
@@ -31,15 +29,13 @@ namespace SaltyBet_Desktop
 
 			Cef.Initialize(settings);
 			browser = new ChromiumWebBrowser("http://saltybet.com");
-			// this.pMain.Controls.Add(browser);
-			// browser.Dock = DockStyle.Fill;
+			this.pMain.Controls.Add(browser);
+			browser.Dock = DockStyle.Fill;
 
 			dataExtractor = new DataExtractor(browser);
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
-
-			cleanupDone = false;
 		}
 
 		/// <summary>
@@ -50,17 +46,6 @@ namespace SaltyBet_Desktop
 			// Don't update if browser is on the wrong page. Or the browser isn't initialized. 
 			if (!browser.IsBrowserInitialized || browser.Address != "http://www.saltybet.com/" || browser.IsLoading)
 				return;
-
-			// Cleanup run once
-			if (!cleanupDone)
-			{
-				DomInteractor domInteractor = new DomInteractor(this.browser);
-
-				domInteractor.RemoveElementById("stream");
-				domInteractor.HideElementById("bottomcontent");
-				
-				cleanupDone = true;
-			}
 
 			// Update Red Side
 			this.tbRedName.Text = dataExtractor.GetRedName();

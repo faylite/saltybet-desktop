@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
-using CefSharp.OffScreen;
+using CefSharp.WinForms;
 
 namespace SaltyBet_Desktop
 {
