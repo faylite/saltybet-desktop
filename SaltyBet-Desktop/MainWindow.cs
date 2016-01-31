@@ -19,8 +19,6 @@ namespace SaltyBet_Desktop
 		private DataExtractor dataExtractor;
 		private Thread refreshThread;
 
-		private bool cleanupDone;
-
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -36,8 +34,6 @@ namespace SaltyBet_Desktop
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
-
-			cleanupDone = false;
 		}
 
 		/// <summary>
@@ -48,18 +44,7 @@ namespace SaltyBet_Desktop
 			// Don't update if browser is on the wrong page. Or the browser isn't initialized. 
 			if (!browser.IsBrowserInitialized || browser.Address != "http://www.saltybet.com/" || browser.IsLoading)
 				return;
-
-			// Cleanup run once
-			if (!cleanupDone)
-			{
-				DomInteractor domInteractor = new DomInteractor(this.browser);
-
-				domInteractor.RemoveElementById("stream");
-				domInteractor.HideElementById("bottomcontent");
-				
-				cleanupDone = true;
-			}
-
+			
 			// Update Red Side
 			this.tbRedName.Text = dataExtractor.GetRedName();
 			this.tbRedPot.Text = dataExtractor.GetRedPot().ToString();
