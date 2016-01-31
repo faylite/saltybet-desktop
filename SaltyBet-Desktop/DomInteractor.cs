@@ -25,11 +25,11 @@ namespace SaltyBet_Desktop
 		{
 			string script = string.Format(
 				"var tempElement = document.getElementById({0});" + 
-				"tempElement.setAttribute(\"style\", \"display:none\");", id);
+				"tempElement.hidden = true;", id);
 			browser.EvaluateScriptAsync(script);
 		}
 
-		public void DeleteElementById(string id)
+		public void RemoveElementById(string id)
 		{
 			string script = string.Format(
 				"var tempElement = document.getElementById({0})" + 
