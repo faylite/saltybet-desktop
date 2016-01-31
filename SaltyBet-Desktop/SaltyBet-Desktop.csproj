@@ -78,6 +78,7 @@
     <Compile Include="DataWindow.Designer.cs">
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="DomInteractor.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
