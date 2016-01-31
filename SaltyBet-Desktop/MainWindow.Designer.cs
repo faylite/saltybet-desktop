@@ -46,9 +46,11 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.gbInfo = new System.Windows.Forms.GroupBox();
 			this.pMain = new System.Windows.Forms.Panel();
+			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.pInfo.SuspendLayout();
 			this.gbRed.SuspendLayout();
 			this.gbBlue.SuspendLayout();
+			this.gbInfo.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pInfo
@@ -294,6 +296,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.gbInfo.BackColor = System.Drawing.Color.Transparent;
+			this.gbInfo.Controls.Add(this.btnOpenDevTools);
 			this.gbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.gbInfo.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.gbInfo.Location = new System.Drawing.Point(0, 0);
@@ -313,6 +316,16 @@
 			this.pMain.Size = new System.Drawing.Size(1210, 512);
 			this.pMain.TabIndex = 1;
 			// 
+			// btnOpenDevTools
+			// 
+			this.btnOpenDevTools.Location = new System.Drawing.Point(13, 192);
+			this.btnOpenDevTools.Name = "btnOpenDevTools";
+			this.btnOpenDevTools.Size = new System.Drawing.Size(199, 68);
+			this.btnOpenDevTools.TabIndex = 0;
+			this.btnOpenDevTools.Text = "Open Dev Tools";
+			this.btnOpenDevTools.UseVisualStyleBackColor = true;
+			this.btnOpenDevTools.Click += new System.EventHandler(this.btnOpenDevTools_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +342,7 @@
 			this.gbRed.PerformLayout();
 			this.gbBlue.ResumeLayout(false);
 			this.gbBlue.PerformLayout();
+			this.gbInfo.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -352,6 +366,7 @@
 		private System.Windows.Forms.TextBox tbBlueOdds;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.GroupBox gbInfo;
+		private System.Windows.Forms.Button btnOpenDevTools;
 	}
 }
 
