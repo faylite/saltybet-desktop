@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CefSharp;
-using CefSharp.WinForms;
+using CefSharp.OffScreen;
 
 namespace SaltyBet_Desktop
 {

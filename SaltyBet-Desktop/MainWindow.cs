@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using CefSharp;
-using CefSharp.WinForms;
+using CefSharp.OffScreen;
 
 namespace SaltyBet_Desktop
 {
@@ -29,8 +29,8 @@ namespace SaltyBet_Desktop
 
 			Cef.Initialize(settings);
 			browser = new ChromiumWebBrowser("http://saltybet.com");
-			this.pMain.Controls.Add(browser);
-			browser.Dock = DockStyle.Fill;
+			// this.pMain.Controls.Add(browser);
+			// browser.Dock = DockStyle.Fill;
 
 			dataExtractor = new DataExtractor(browser);
 
