@@ -26,7 +26,7 @@ namespace SaltyBet_Desktop
 			var settings = new CefSettings();
 
 			Cef.Initialize(settings);
-			browser = new ChromiumWebBrowser("http://saltybet.com");
+			browser = new ChromiumWebBrowser("D:\\Dev\\projects\\JavaScript\\Portfolio-Static");
 			this.pMain.Controls.Add(browser);
 			browser.Dock = DockStyle.Fill;
 
@@ -62,8 +62,19 @@ namespace SaltyBet_Desktop
 		{
 			while (true)
 			{
-				Thread.Sleep(1 * 1000);
-				BeginInvoke(new MethodInvoker(refresh));
+				try
+				{
+					Thread.Sleep(1 * 1000);
+					BeginInvoke(new MethodInvoker(refresh));
+				}
+				catch (InvalidOperationException)
+				{
+					break;
+				}
+				catch (ThreadInterruptedException)
+				{
+					break;
+				}
 			}
 		}
 	}
