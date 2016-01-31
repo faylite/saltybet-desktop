@@ -24,14 +24,11 @@ namespace SaltyBet_Desktop
 			InitializeComponent();
 
 			var settings = new CefSettings();
-#if DEBUG
-			// Show dev tools in debug builds
-			settings.WindowlessRenderingEnabled = true;
-#endif
+
 			Cef.Initialize(settings);
 			browser = new ChromiumWebBrowser("http://saltybet.com");
-			// this.pMain.Controls.Add(browser);
-			// browser.Dock = DockStyle.Fill;
+			this.pMain.Controls.Add(browser);
+			browser.Dock = DockStyle.Fill;
 
 			dataExtractor = new DataExtractor(this.browser);
 
