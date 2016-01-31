@@ -85,5 +85,13 @@ namespace SaltyBet_Desktop
 		{
 			browser.ShowDevTools();
 		}
+
+		private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			// Dispose of the browser window. 
+			browser.Dispose();
+			// Shutdown the embedded framework
+			Cef.Shutdown();
+		}
 	}
 }

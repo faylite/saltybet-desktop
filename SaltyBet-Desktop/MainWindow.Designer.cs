@@ -45,8 +45,8 @@
 			this.tbBlueName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.gbInfo = new System.Windows.Forms.GroupBox();
-			this.pMain = new System.Windows.Forms.Panel();
 			this.btnOpenDevTools = new System.Windows.Forms.Button();
+			this.pMain = new System.Windows.Forms.Panel();
 			this.pInfo.SuspendLayout();
 			this.gbRed.SuspendLayout();
 			this.gbBlue.SuspendLayout();
@@ -307,15 +307,6 @@
 			this.gbInfo.TabStop = false;
 			this.gbInfo.Text = "Info";
 			// 
-			// pMain
-			// 
-			this.pMain.BackColor = System.Drawing.Color.Transparent;
-			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pMain.Location = new System.Drawing.Point(0, 0);
-			this.pMain.Name = "pMain";
-			this.pMain.Size = new System.Drawing.Size(1210, 512);
-			this.pMain.TabIndex = 1;
-			// 
 			// btnOpenDevTools
 			// 
 			this.btnOpenDevTools.Location = new System.Drawing.Point(13, 192);
@@ -325,6 +316,15 @@
 			this.btnOpenDevTools.Text = "Open Dev Tools";
 			this.btnOpenDevTools.UseVisualStyleBackColor = true;
 			this.btnOpenDevTools.Click += new System.EventHandler(this.btnOpenDevTools_Click);
+			// 
+			// pMain
+			// 
+			this.pMain.BackColor = System.Drawing.Color.Transparent;
+			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pMain.Location = new System.Drawing.Point(0, 0);
+			this.pMain.Name = "pMain";
+			this.pMain.Size = new System.Drawing.Size(1210, 512);
+			this.pMain.TabIndex = 1;
 			// 
 			// MainWindow
 			// 
@@ -337,6 +337,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
 			this.Text = "SaltyBot";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
 			this.pInfo.ResumeLayout(false);
 			this.gbRed.ResumeLayout(false);
 			this.gbRed.PerformLayout();
