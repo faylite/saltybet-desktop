@@ -27,8 +27,6 @@ namespace SaltyBet_Desktop
 				"var tempElement = document.getElementById({0});" + 
 				"tempElement.hidden = true;", id);
 			browser.ExecuteScriptAsync(script);
-
-			browser.ExecuteScriptAsync("alert(\"Well, this works!\");");
 		}
 
 		public void RemoveElementById(string id)
