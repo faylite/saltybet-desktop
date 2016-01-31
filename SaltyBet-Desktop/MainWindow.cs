@@ -55,6 +55,7 @@ namespace SaltyBet_Desktop
 				DomInteractor domInteractor = new DomInteractor(this.browser);
 
 				domInteractor.RemoveElementById("stream");
+				domInteractor.HideElementById("bottomcontent");
 				
 				cleanupDone = true;
 			}

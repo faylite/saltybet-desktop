@@ -26,7 +26,7 @@ namespace SaltyBet_Desktop
 			string script = string.Format(
 				"var tempElement = document.getElementById({0});" + 
 				"tempElement.hidden = true;", id);
-			browser.EvaluateScriptAsync(script);
+			browser.ExecuteScriptAsync(script);
 		}
 
 		public void RemoveElementById(string id)
@@ -34,6 +34,7 @@ namespace SaltyBet_Desktop
 			string script = string.Format(
 				"var tempElement = document.getElementById({0})" + 
 				"tempElement.remove()", id);
+			browser.ExecuteScriptAsync(script);
 		}
 	}
 }
