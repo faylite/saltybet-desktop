@@ -34,7 +34,6 @@
 			this.lbBetStatus = new System.Windows.Forms.Label();
 			this.tbSaltBalance = new System.Windows.Forms.TextBox();
 			this.lbSaltBalance = new System.Windows.Forms.Label();
-			this.pBottom = new System.Windows.Forms.Panel();
 			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.pMain = new System.Windows.Forms.Panel();
 			this.pBlue = new System.Windows.Forms.Panel();
@@ -53,7 +52,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			pInfo = new System.Windows.Forms.Panel();
 			pInfo.SuspendLayout();
-			this.pBottom.SuspendLayout();
 			this.pMain.SuspendLayout();
 			this.pBlue.SuspendLayout();
 			this.pRed.SuspendLayout();
@@ -61,6 +59,7 @@
 			// 
 			// pInfo
 			// 
+			pInfo.Controls.Add(this.btnOpenDevTools);
 			pInfo.Controls.Add(this.tbBetStatus);
 			pInfo.Controls.Add(this.lbBetStatus);
 			pInfo.Controls.Add(this.tbSaltBalance);
@@ -68,7 +67,7 @@
 			pInfo.Dock = System.Windows.Forms.DockStyle.Fill;
 			pInfo.Location = new System.Drawing.Point(373, 0);
 			pInfo.Name = "pInfo";
-			pInfo.Size = new System.Drawing.Size(464, 512);
+			pInfo.Size = new System.Drawing.Size(464, 785);
 			pInfo.TabIndex = 2;
 			// 
 			// tbBetStatus
@@ -78,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBetStatus.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBetStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBetStatus.Enabled = false;
 			this.tbBetStatus.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbBetStatus.Location = new System.Drawing.Point(6, 125);
 			this.tbBetStatus.Name = "tbBetStatus";
@@ -89,9 +89,7 @@
 			// 
 			// lbBetStatus
 			// 
-			this.lbBetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbBetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.lbBetStatus.AutoSize = true;
 			this.lbBetStatus.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbBetStatus.Location = new System.Drawing.Point(174, 91);
@@ -109,6 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbSaltBalance.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbSaltBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbSaltBalance.Enabled = false;
 			this.tbSaltBalance.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbSaltBalance.Location = new System.Drawing.Point(6, 38);
 			this.tbSaltBalance.Name = "tbSaltBalance";
@@ -120,9 +119,7 @@
 			// 
 			// lbSaltBalance
 			// 
-			this.lbSaltBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbSaltBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.lbSaltBalance.AutoSize = true;
 			this.lbSaltBalance.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbSaltBalance.Location = new System.Drawing.Point(164, 9);
@@ -133,21 +130,12 @@
 			this.lbSaltBalance.Text = "Salt Balance";
 			this.lbSaltBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// pBottom
-			// 
-			this.pBottom.BackColor = System.Drawing.Color.Transparent;
-			this.pBottom.Controls.Add(this.btnOpenDevTools);
-			this.pBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.pBottom.Location = new System.Drawing.Point(0, 512);
-			this.pBottom.Name = "pBottom";
-			this.pBottom.Size = new System.Drawing.Size(1210, 273);
-			this.pBottom.TabIndex = 0;
-			// 
 			// btnOpenDevTools
 			// 
-			this.btnOpenDevTools.Location = new System.Drawing.Point(12, 193);
+			this.btnOpenDevTools.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnOpenDevTools.Location = new System.Drawing.Point(6, 705);
 			this.btnOpenDevTools.Name = "btnOpenDevTools";
-			this.btnOpenDevTools.Size = new System.Drawing.Size(199, 68);
+			this.btnOpenDevTools.Size = new System.Drawing.Size(452, 68);
 			this.btnOpenDevTools.TabIndex = 0;
 			this.btnOpenDevTools.Text = "Open Dev Tools";
 			this.btnOpenDevTools.UseVisualStyleBackColor = true;
@@ -162,7 +150,7 @@
 			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pMain.Location = new System.Drawing.Point(0, 0);
 			this.pMain.Name = "pMain";
-			this.pMain.Size = new System.Drawing.Size(1210, 512);
+			this.pMain.Size = new System.Drawing.Size(1210, 785);
 			this.pMain.TabIndex = 1;
 			// 
 			// pBlue
@@ -177,7 +165,7 @@
 			this.pBlue.Dock = System.Windows.Forms.DockStyle.Right;
 			this.pBlue.Location = new System.Drawing.Point(837, 0);
 			this.pBlue.Name = "pBlue";
-			this.pBlue.Size = new System.Drawing.Size(373, 512);
+			this.pBlue.Size = new System.Drawing.Size(373, 785);
 			this.pBlue.TabIndex = 1;
 			// 
 			// tbBlueOdds
@@ -187,6 +175,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBlueOdds.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBlueOdds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBlueOdds.Enabled = false;
 			this.tbBlueOdds.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbBlueOdds.Location = new System.Drawing.Point(12, 206);
 			this.tbBlueOdds.Name = "tbBlueOdds";
@@ -203,6 +192,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBluePot.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBluePot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBluePot.Enabled = false;
 			this.tbBluePot.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbBluePot.Location = new System.Drawing.Point(12, 125);
 			this.tbBluePot.Name = "tbBluePot";
@@ -249,6 +239,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBlueName.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbBlueName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbBlueName.Enabled = false;
 			this.tbBlueName.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbBlueName.Location = new System.Drawing.Point(12, 38);
 			this.tbBlueName.Name = "tbBlueName";
@@ -284,7 +275,7 @@
 			this.pRed.Dock = System.Windows.Forms.DockStyle.Left;
 			this.pRed.Location = new System.Drawing.Point(0, 0);
 			this.pRed.Name = "pRed";
-			this.pRed.Size = new System.Drawing.Size(373, 512);
+			this.pRed.Size = new System.Drawing.Size(373, 785);
 			this.pRed.TabIndex = 0;
 			// 
 			// tbRedOdds
@@ -294,6 +285,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbRedOdds.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbRedOdds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbRedOdds.Enabled = false;
 			this.tbRedOdds.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbRedOdds.Location = new System.Drawing.Point(12, 206);
 			this.tbRedOdds.Name = "tbRedOdds";
@@ -325,6 +317,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbRedPot.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbRedPot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbRedPot.Enabled = false;
 			this.tbRedPot.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbRedPot.Location = new System.Drawing.Point(12, 125);
 			this.tbRedPot.Name = "tbRedPot";
@@ -356,6 +349,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbRedName.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tbRedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbRedName.Enabled = false;
 			this.tbRedName.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbRedName.Location = new System.Drawing.Point(12, 38);
 			this.tbRedName.Name = "tbRedName";
@@ -384,17 +378,15 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.White;
+			this.BackColor = System.Drawing.Color.Ivory;
 			this.ClientSize = new System.Drawing.Size(1210, 785);
 			this.Controls.Add(this.pMain);
-			this.Controls.Add(this.pBottom);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
 			this.Text = "SaltyBot";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
 			pInfo.ResumeLayout(false);
 			pInfo.PerformLayout();
-			this.pBottom.ResumeLayout(false);
 			this.pMain.ResumeLayout(false);
 			this.pBlue.ResumeLayout(false);
 			this.pBlue.PerformLayout();
@@ -405,8 +397,6 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Panel pBottom;
 		private System.Windows.Forms.Panel pMain;
 		private System.Windows.Forms.Button btnOpenDevTools;
 		private System.Windows.Forms.Panel pBlue;
