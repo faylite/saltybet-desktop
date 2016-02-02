@@ -13,7 +13,7 @@ namespace SaltyBet_Desktop
 		/// YYYY/MM/DD-HH:MM:SS
 		/// </summary>
 		/// <returns></returns>
-		public string getLongDate()
+		public string GetLongDate()
 		{
 			return
 				DateTime.Now.Year	+ "/" +
