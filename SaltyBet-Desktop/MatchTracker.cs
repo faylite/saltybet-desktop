@@ -46,7 +46,8 @@ namespace SaltyBet_Desktop
 			if (lastPlayer1 != player1)
 			{
 				// Filters out team matches
-				if (player1.Contains("Team"))
+				// Also returns false if this was the first players
+				if (player1.Contains("Team") || (player1 == "" && player2 == ""))
 					return false;
 				return true;
 			}
