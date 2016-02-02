@@ -16,7 +16,10 @@ namespace SaltyBet_Desktop
 	public partial class MainWindow : Form
 	{
 		private ChromiumWebBrowser browser;
+
 		private DataExtractor dataExtractor;
+		private MatchTracker matchTracker;
+
 		private Thread refreshThread;
 
 		public MainWindow()
@@ -33,6 +36,7 @@ namespace SaltyBet_Desktop
 			// browser.Dock = DockStyle.Fill;
 
 			dataExtractor = new DataExtractor(browser);
+			matchTracker = new MatchTracker();
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
@@ -47,19 +51,37 @@ namespace SaltyBet_Desktop
 			if (!browser.IsBrowserInitialized || browser.Address != "http://www.saltybet.com/" || browser.IsLoading)
 				return;
 
+			string redName = dataExtractor.GetRedName();
+			string blueName = dataExtractor.GetBlueName();
+
+			int redPot = dataExtractor.GetRedPotNum();
+			int bluePot = dataExtractor.GetBluePotNum();
+
+			double redOdds = dataExtractor.GetRedOdds();
+			double blueOdds = dataExtractor.GetBlueOdds();
+
+			// Update database
+			if (matchTracker.IsNewMatch(redName, blueName))
+			{
+				// row layout
+				// RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
+				dgwMatchHistory.Rows.Add(redName, redPot, redOdds, blueName, bluePot, blueOdds, "n/a", "n/a");
+			}
+			
 			// Update Red Side
-			this.tbRedName.Text = dataExtractor.GetRedName();
-			this.tbRedPot.Text = dataExtractor.GetRedPot().ToString();
-			this.tbRedOdds.Text = dataExtractor.GetRedOdds().ToString();
+			this.tbRedName.Text = redName;
+			this.tbRedPot.Text = redPot.ToString();
+			this.tbRedOdds.Text = redOdds.ToString();
 
 			// Update Blue Side
-			this.tbBlueName.Text = dataExtractor.GetBlueName();
-			this.tbBluePot.Text = dataExtractor.GetBluePot().ToString();
-			this.tbBlueOdds.Text = dataExtractor.GetBlueOdds().ToString();
+			this.tbBlueName.Text = blueName;
+			this.tbBluePot.Text = bluePot.ToString();
+			this.tbBlueOdds.Text = blueOdds.ToString();
 
 			// Update info
 			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
 			this.tbBetStatus.Text = dataExtractor.GetBetStatus();
+
 		}
 
 		/// <summary>
