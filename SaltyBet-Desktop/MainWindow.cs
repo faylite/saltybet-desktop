@@ -51,15 +51,14 @@ namespace SaltyBet_Desktop
 			if (!browser.IsBrowserInitialized || browser.Address != "http://www.saltybet.com/" || browser.IsLoading)
 				return;
 
+			// Update match tracker with new info, if new info is available. 
 			matchTracker.Update(dataExtractor);
-
-			
 
 			// Update database
 			if (matchTracker.IsNewMatch())
 			{
-				// If 
-				if (!matchTracker.IsTeamMatch())
+				// If last match wasn't a team match update add a new row
+				if (!matchTracker.WasTeamMatch())
 				{
 					// row layout
 					// RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
@@ -72,16 +71,16 @@ namespace SaltyBet_Desktop
 			}
 			
 			// Update Red Side
-			this.tbRedName.Text = redName;
-			this.tbRedPot.Text = redPot.ToString();
-			this.tbRedOdds.Text = redOdds.ToString();
+			this.tbRedName.Text = matchTracker.Player1;
+			this.tbRedPot.Text = matchTracker.PotPlayer1.ToString();
+			this.tbRedOdds.Text = matchTracker.OddsPlayer1.ToString();
 
 			// Update Blue Side
-			this.tbBlueName.Text = blueName;
-			this.tbBluePot.Text = bluePot.ToString();
-			this.tbBlueOdds.Text = blueOdds.ToString();
+			this.tbBlueName.Text = matchTracker.Player2;
+			this.tbBluePot.Text = matchTracker.PotPlayer2.ToString();
+			this.tbBlueOdds.Text = matchTracker.OddsPlayer2.ToString();
 
-			// Update info
+			// Update other general info
 			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
 			this.tbBetStatus.Text = dataExtractor.GetBetStatus();
 
