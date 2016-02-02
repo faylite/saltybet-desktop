@@ -63,9 +63,17 @@ namespace SaltyBet_Desktop
 			// Update database
 			if (matchTracker.IsNewMatch(redName, blueName))
 			{
-				// row layout
-				// RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
-				dgwMatchHistory.Rows.Add(redName, redPot, redOdds, blueName, bluePot, blueOdds, "n/a", "n/a");
+				// If 
+				if (!matchTracker.IsTeamMatch())
+				{
+					// row layout
+					// RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
+					dgwMatchHistory.Rows.Add(
+						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, redOdds, 
+						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, blueOdds, 
+						"n/a", "n/a"
+					);
+				}
 			}
 			
 			// Update Red Side
