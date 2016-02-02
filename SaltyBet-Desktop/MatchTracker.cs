@@ -54,6 +54,7 @@ namespace SaltyBet_Desktop
 			// If there is a new Player name, it's probably a new match
 			if (LastPlayer1 != Player1 && LastPlayer2 != Player2)
 			{
+
 				return true;
 			}
 

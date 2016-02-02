@@ -143,6 +143,15 @@ namespace SaltyBet_Desktop
 		}
 
 		/// <summary>
+		/// Returns the content of the betstatus span, which includes things such as bet status. Which side that wins. 
+		/// </summary>
+		/// <returns></returns>
+		public string GetStatusText()
+		{
+			return executeJS("document.getElementById(\"betstatus\").innerHTML");
+		}
+
+		/// <summary>
 		/// Executes js and returns the output as a string
 		/// </summary>
 		/// <param name="script">The JavaScript to execute</param>

@@ -85,7 +85,7 @@ namespace SaltyBet_Desktop
 
 			// Update other general info
 			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
-			this.tbBetStatus.Text = dataExtractor.GetBetStatus();
+			this.tbBetStatus.Text = dataExtractor.GetStatusText();
 
 		}
 
