@@ -33,7 +33,6 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.tbBetStatus = new System.Windows.Forms.TextBox();
 			this.lbBetStatus = new System.Windows.Forms.Label();
 			this.tbSaltBalance = new System.Windows.Forms.TextBox();
@@ -74,7 +73,6 @@
 			// pInfo
 			// 
 			pInfo.BackColor = System.Drawing.Color.Transparent;
-			pInfo.Controls.Add(this.btnOpenDevTools);
 			pInfo.Controls.Add(this.tbBetStatus);
 			pInfo.Controls.Add(this.lbBetStatus);
 			pInfo.Controls.Add(this.tbSaltBalance);
@@ -84,17 +82,6 @@
 			pInfo.Name = "pInfo";
 			pInfo.Size = new System.Drawing.Size(505, 350);
 			pInfo.TabIndex = 5;
-			// 
-			// btnOpenDevTools
-			// 
-			this.btnOpenDevTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnOpenDevTools.Location = new System.Drawing.Point(6, 270);
-			this.btnOpenDevTools.Name = "btnOpenDevTools";
-			this.btnOpenDevTools.Size = new System.Drawing.Size(493, 68);
-			this.btnOpenDevTools.TabIndex = 0;
-			this.btnOpenDevTools.Text = "Open Dev Tools";
-			this.btnOpenDevTools.UseVisualStyleBackColor = true;
 			// 
 			// tbBetStatus
 			// 
@@ -544,7 +531,6 @@
 		private System.Windows.Forms.TextBox tbSaltBalance;
 		private System.Windows.Forms.Label lbBetStatus;
 		private System.Windows.Forms.TextBox tbBetStatus;
-		private System.Windows.Forms.Button btnOpenDevTools;
 		private System.Windows.Forms.DataGridView dgwMatchHistory;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Timestamp;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MatchTime;
