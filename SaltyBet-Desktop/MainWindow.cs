@@ -51,17 +51,12 @@ namespace SaltyBet_Desktop
 			if (!browser.IsBrowserInitialized || browser.Address != "http://www.saltybet.com/" || browser.IsLoading)
 				return;
 
-			string redName = dataExtractor.GetRedName();
-			string blueName = dataExtractor.GetBlueName();
+			matchTracker.Update(dataExtractor);
 
-			int redPot = dataExtractor.GetRedPotNum();
-			int bluePot = dataExtractor.GetBluePotNum();
-
-			double redOdds = dataExtractor.GetRedOdds();
-			double blueOdds = dataExtractor.GetBlueOdds();
+			
 
 			// Update database
-			if (matchTracker.IsNewMatch(redName, blueName))
+			if (matchTracker.IsNewMatch())
 			{
 				// If 
 				if (!matchTracker.IsTeamMatch())
@@ -69,8 +64,8 @@ namespace SaltyBet_Desktop
 					// row layout
 					// RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
 					dgwMatchHistory.Rows.Add(
-						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, redOdds, 
-						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, blueOdds, 
+						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1, 
+						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2, 
 						"n/a", "n/a"
 					);
 				}

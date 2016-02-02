@@ -66,21 +66,11 @@ namespace SaltyBet_Desktop
 		/// <summary>
 		/// Returns true if there is a new match, this is checked by checking if the last player name matches the new one. 
 		/// </summary>
-		/// <param name="player1"></param>
-		/// <param name="player2"></param>
 		/// <returns></returns>
-		public bool IsNewMatch(string player1, string player2)
+		public bool IsNewMatch()
 		{
-			// Set last cycle's players to last players. 
-			this.lastPlayer1 = this.player1;
-			this.lastPlayer2 = this.player2;
-
-			// Get (potentially) new players
-			this.player1 = player1;
-			this.player2 = player2;
-
 			// If there was no last player, this is probably the first match, return false. 
-			if (lastPlayer1 == "")
+			if (lastPlayer1 == "" && lastPlayer2 == "")
 				return false;
 
 			// If there is a new player name, it's probably a new match
@@ -91,6 +81,31 @@ namespace SaltyBet_Desktop
 
 			// If all else fails, return false
 			return false;
+		}
+
+		/// <summary>
+		/// Updates all the match stats with data from the browser window. 
+		/// </summary>
+		/// <param name="dataExtractor"></param>
+		public void Update(DataExtractor dataExtractor)
+		{
+			// Set call's stats to the last
+			lastPlayer1 = player1;
+			lastPlayer2 = player2;
+			lastPotPlayer1 = potPlayer1;
+			lastPotPlayer2 = potPlayer2;
+			lastOddsPlayer1 = oddsPlayer1;
+			lastOddsPlayer2 = oddsPlayer2;
+			
+			// Get new player names, if applicable. 
+			player1 = dataExtractor.GetRedName();
+			player2 = dataExtractor.GetBlueName();
+			// Get new pots
+			potPlayer1 = dataExtractor.GetRedPotNum();
+			potPlayer2 = dataExtractor.GetBluePotNum();
+			// Get new odds
+			oddsPlayer1 = dataExtractor.GetRedOdds();
+			oddsPlayer2 = dataExtractor.GetBlueOdds();
 		}
 
 		/// <summary>
