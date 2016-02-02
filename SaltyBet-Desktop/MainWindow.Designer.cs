@@ -30,12 +30,13 @@
 		{
 			System.Windows.Forms.Panel pInfo;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+			this.pMain = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.tbBetStatus = new System.Windows.Forms.TextBox();
 			this.lbBetStatus = new System.Windows.Forms.Label();
 			this.tbSaltBalance = new System.Windows.Forms.TextBox();
 			this.lbSaltBalance = new System.Windows.Forms.Label();
-			this.pMain = new System.Windows.Forms.Panel();
 			this.pBlue = new System.Windows.Forms.Panel();
 			this.tbBlueOdds = new System.Windows.Forms.TextBox();
 			this.tbBluePot = new System.Windows.Forms.TextBox();
@@ -50,12 +51,44 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.tbRedName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.RedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.RedPot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.RedOdds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.BlueName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.BluePot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.BlueOdds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Winner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MatchTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			pInfo = new System.Windows.Forms.Panel();
-			pInfo.SuspendLayout();
 			this.pMain.SuspendLayout();
+			this.panel1.SuspendLayout();
+			pInfo.SuspendLayout();
 			this.pBlue.SuspendLayout();
 			this.pRed.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// pMain
+			// 
+			this.pMain.BackColor = System.Drawing.Color.Transparent;
+			this.pMain.Controls.Add(pInfo);
+			this.pMain.Controls.Add(this.pBlue);
+			this.pMain.Controls.Add(this.pRed);
+			this.pMain.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pMain.Location = new System.Drawing.Point(0, 0);
+			this.pMain.Name = "pMain";
+			this.pMain.Size = new System.Drawing.Size(1201, 670);
+			this.pMain.TabIndex = 1;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.dataGridView1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel1.Location = new System.Drawing.Point(0, 676);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1201, 196);
+			this.panel1.TabIndex = 18;
 			// 
 			// pInfo
 			// 
@@ -67,20 +100,19 @@
 			pInfo.Dock = System.Windows.Forms.DockStyle.Fill;
 			pInfo.Location = new System.Drawing.Point(373, 0);
 			pInfo.Name = "pInfo";
-			pInfo.Size = new System.Drawing.Size(464, 785);
-			pInfo.TabIndex = 2;
+			pInfo.Size = new System.Drawing.Size(455, 670);
+			pInfo.TabIndex = 5;
 			// 
 			// btnOpenDevTools
 			// 
 			this.btnOpenDevTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnOpenDevTools.Location = new System.Drawing.Point(6, 705);
+			this.btnOpenDevTools.Location = new System.Drawing.Point(6, 590);
 			this.btnOpenDevTools.Name = "btnOpenDevTools";
-			this.btnOpenDevTools.Size = new System.Drawing.Size(452, 68);
+			this.btnOpenDevTools.Size = new System.Drawing.Size(443, 68);
 			this.btnOpenDevTools.TabIndex = 0;
 			this.btnOpenDevTools.Text = "Open Dev Tools";
 			this.btnOpenDevTools.UseVisualStyleBackColor = true;
-			this.btnOpenDevTools.Click += new System.EventHandler(this.btnOpenDevTools_Click);
 			// 
 			// tbBetStatus
 			// 
@@ -94,7 +126,7 @@
 			this.tbBetStatus.Location = new System.Drawing.Point(6, 125);
 			this.tbBetStatus.Name = "tbBetStatus";
 			this.tbBetStatus.ReadOnly = true;
-			this.tbBetStatus.Size = new System.Drawing.Size(452, 34);
+			this.tbBetStatus.Size = new System.Drawing.Size(443, 34);
 			this.tbBetStatus.TabIndex = 17;
 			this.tbBetStatus.Text = "0";
 			this.tbBetStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -104,7 +136,7 @@
 			this.lbBetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.lbBetStatus.AutoSize = true;
 			this.lbBetStatus.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbBetStatus.Location = new System.Drawing.Point(174, 91);
+			this.lbBetStatus.Location = new System.Drawing.Point(169, 91);
 			this.lbBetStatus.Name = "lbBetStatus";
 			this.lbBetStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.lbBetStatus.Size = new System.Drawing.Size(117, 26);
@@ -124,7 +156,7 @@
 			this.tbSaltBalance.Location = new System.Drawing.Point(6, 38);
 			this.tbSaltBalance.Name = "tbSaltBalance";
 			this.tbSaltBalance.ReadOnly = true;
-			this.tbSaltBalance.Size = new System.Drawing.Size(452, 34);
+			this.tbSaltBalance.Size = new System.Drawing.Size(443, 34);
 			this.tbSaltBalance.TabIndex = 15;
 			this.tbSaltBalance.Text = "0";
 			this.tbSaltBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -134,25 +166,13 @@
 			this.lbSaltBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.lbSaltBalance.AutoSize = true;
 			this.lbSaltBalance.Font = new System.Drawing.Font("Meiryo UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbSaltBalance.Location = new System.Drawing.Point(164, 9);
+			this.lbSaltBalance.Location = new System.Drawing.Point(159, 9);
 			this.lbSaltBalance.Name = "lbSaltBalance";
 			this.lbSaltBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.lbSaltBalance.Size = new System.Drawing.Size(136, 26);
 			this.lbSaltBalance.TabIndex = 14;
 			this.lbSaltBalance.Text = "Salt Balance";
 			this.lbSaltBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// pMain
-			// 
-			this.pMain.BackColor = System.Drawing.Color.Transparent;
-			this.pMain.Controls.Add(pInfo);
-			this.pMain.Controls.Add(this.pBlue);
-			this.pMain.Controls.Add(this.pRed);
-			this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pMain.Location = new System.Drawing.Point(0, 0);
-			this.pMain.Name = "pMain";
-			this.pMain.Size = new System.Drawing.Size(1210, 785);
-			this.pMain.TabIndex = 1;
 			// 
 			// pBlue
 			// 
@@ -164,10 +184,10 @@
 			this.pBlue.Controls.Add(this.tbBlueName);
 			this.pBlue.Controls.Add(this.label2);
 			this.pBlue.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pBlue.Location = new System.Drawing.Point(837, 0);
+			this.pBlue.Location = new System.Drawing.Point(828, 0);
 			this.pBlue.Name = "pBlue";
-			this.pBlue.Size = new System.Drawing.Size(373, 785);
-			this.pBlue.TabIndex = 1;
+			this.pBlue.Size = new System.Drawing.Size(373, 670);
+			this.pBlue.TabIndex = 4;
 			// 
 			// tbBlueOdds
 			// 
@@ -276,8 +296,8 @@
 			this.pRed.Dock = System.Windows.Forms.DockStyle.Left;
 			this.pRed.Location = new System.Drawing.Point(0, 0);
 			this.pRed.Name = "pRed";
-			this.pRed.Size = new System.Drawing.Size(373, 785);
-			this.pRed.TabIndex = 0;
+			this.pRed.Size = new System.Drawing.Size(373, 670);
+			this.pRed.TabIndex = 3;
 			// 
 			// tbRedOdds
 			// 
@@ -375,49 +395,131 @@
 			this.label1.Text = "Character Name";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AllowUserToAddRows = false;
+			this.dataGridView1.AllowUserToDeleteRows = false;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RedName,
+            this.RedPot,
+            this.RedOdds,
+            this.BlueName,
+            this.BluePot,
+            this.BlueOdds,
+            this.Winner,
+            this.MatchTime});
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.Size = new System.Drawing.Size(1201, 196);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// RedName
+			// 
+			this.RedName.HeaderText = "Red Name";
+			this.RedName.Name = "RedName";
+			this.RedName.ReadOnly = true;
+			// 
+			// RedPot
+			// 
+			this.RedPot.HeaderText = "Red Pot";
+			this.RedPot.Name = "RedPot";
+			this.RedPot.ReadOnly = true;
+			// 
+			// RedOdds
+			// 
+			this.RedOdds.HeaderText = "Red Odds";
+			this.RedOdds.Name = "RedOdds";
+			this.RedOdds.ReadOnly = true;
+			// 
+			// BlueName
+			// 
+			this.BlueName.HeaderText = "Blue Name";
+			this.BlueName.Name = "BlueName";
+			this.BlueName.ReadOnly = true;
+			// 
+			// BluePot
+			// 
+			this.BluePot.HeaderText = "Blue Pot";
+			this.BluePot.Name = "BluePot";
+			this.BluePot.ReadOnly = true;
+			// 
+			// BlueOdds
+			// 
+			this.BlueOdds.HeaderText = "Blue Odds";
+			this.BlueOdds.Name = "BlueOdds";
+			this.BlueOdds.ReadOnly = true;
+			// 
+			// Winner
+			// 
+			this.Winner.HeaderText = "Winner";
+			this.Winner.Name = "Winner";
+			this.Winner.ReadOnly = true;
+			// 
+			// MatchTime
+			// 
+			this.MatchTime.HeaderText = "Match Time";
+			this.MatchTime.Name = "MatchTime";
+			this.MatchTime.ReadOnly = true;
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Ivory;
-			this.ClientSize = new System.Drawing.Size(1210, 785);
+			this.ClientSize = new System.Drawing.Size(1201, 872);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.pMain);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
 			this.Text = "SaltyBot";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
+			this.pMain.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			pInfo.ResumeLayout(false);
 			pInfo.PerformLayout();
-			this.pMain.ResumeLayout(false);
 			this.pBlue.ResumeLayout(false);
 			this.pBlue.PerformLayout();
 			this.pRed.ResumeLayout(false);
 			this.pRed.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 		private System.Windows.Forms.Panel pMain;
-		private System.Windows.Forms.Button btnOpenDevTools;
-		private System.Windows.Forms.Panel pBlue;
-		private System.Windows.Forms.Panel pRed;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RedName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RedPot;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RedOdds;
+		private System.Windows.Forms.DataGridViewTextBoxColumn BlueName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn BluePot;
+		private System.Windows.Forms.DataGridViewTextBoxColumn BlueOdds;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Winner;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MatchTime;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox tbRedName;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox tbRedPot;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox tbRedOdds;
+		private System.Windows.Forms.Panel pRed;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox tbBlueName;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox tbBluePot;
 		private System.Windows.Forms.TextBox tbBlueOdds;
+		private System.Windows.Forms.Panel pBlue;
 		private System.Windows.Forms.Label lbSaltBalance;
 		private System.Windows.Forms.TextBox tbSaltBalance;
 		private System.Windows.Forms.Label lbBetStatus;
 		private System.Windows.Forms.TextBox tbBetStatus;
+		private System.Windows.Forms.Button btnOpenDevTools;
 	}
 }
 
