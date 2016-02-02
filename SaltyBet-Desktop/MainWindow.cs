@@ -19,6 +19,7 @@ namespace SaltyBet_Desktop
 
 		private DataExtractor dataExtractor;
 		private MatchTracker matchTracker;
+		private Util util;
 
 		private Thread refreshThread;
 
@@ -37,6 +38,7 @@ namespace SaltyBet_Desktop
 
 			dataExtractor = new DataExtractor(browser);
 			matchTracker = new MatchTracker();
+			util = new Util();
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
@@ -61,8 +63,9 @@ namespace SaltyBet_Desktop
 				if (!matchTracker.WasTeamMatch())
 				{
 					// row layout
-					// RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
+					// TimeStamp | RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
 					dgwMatchHistory.Rows.Add(
+						util.GetLongDate(),
 						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1, 
 						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2, 
 						"n/a", "n/a"

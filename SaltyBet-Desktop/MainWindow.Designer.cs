@@ -51,6 +51,7 @@
 			this.tbRedName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgwMatchHistory = new System.Windows.Forms.DataGridView();
+			this.Timestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RedPot = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RedOdds = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -390,6 +391,7 @@
 			this.dgwMatchHistory.AllowUserToDeleteRows = false;
 			this.dgwMatchHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgwMatchHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Timestamp,
             this.RedName,
             this.RedPot,
             this.RedOdds,
@@ -404,6 +406,12 @@
 			this.dgwMatchHistory.ReadOnly = true;
 			this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 196);
 			this.dgwMatchHistory.TabIndex = 2;
+			// 
+			// Timestamp
+			// 
+			this.Timestamp.HeaderText = "Time Stamp";
+			this.Timestamp.Name = "Timestamp";
+			this.Timestamp.ReadOnly = true;
 			// 
 			// RedName
 			// 
@@ -498,6 +506,8 @@
 		private System.Windows.Forms.Label lbBetStatus;
 		private System.Windows.Forms.TextBox tbBetStatus;
 		private System.Windows.Forms.Button btnOpenDevTools;
+		private System.Windows.Forms.DataGridView dgwMatchHistory;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Timestamp;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MatchTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Winner;
 		private System.Windows.Forms.DataGridViewTextBoxColumn BlueOdds;
@@ -506,7 +516,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedOdds;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedPot;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedName;
-		private System.Windows.Forms.DataGridView dgwMatchHistory;
 	}
 }
 
