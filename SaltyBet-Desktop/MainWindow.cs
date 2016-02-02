@@ -86,15 +86,6 @@ namespace SaltyBet_Desktop
 			// Update other general info
 			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
 			this.tbBetStatus.Text = dataExtractor.GetStatusText();
-
-			// row layout
-			// TimeStamp | RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
-			dgwMatchHistory.Rows.Add(
-				util.GetLongDate(),
-				matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1,
-				matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2,
-				matchTracker.LastWinner, "n/a"
-			);
 		}
 
 		/// <summary>

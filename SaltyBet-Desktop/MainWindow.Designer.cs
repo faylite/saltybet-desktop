@@ -431,6 +431,7 @@
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.dgwMatchHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			this.dgwMatchHistory.RowHeadersVisible = false;
 			this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 196);
 			this.dgwMatchHistory.TabIndex = 3;
 			// 
