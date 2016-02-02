@@ -16,6 +16,8 @@ namespace SaltyBet_Desktop
 		public double LastOddsPlayer1 { get; set; }
 		public double LastOddsPlayer2 { get; set; }
 
+		public string LastWinner { get; set; }
+
 		// Variables current match
 		public string Player1 { get; set; }
 		public string Player2 { get; set; }
@@ -23,6 +25,9 @@ namespace SaltyBet_Desktop
 		public int PotPlayer2 { get; set; }
 		public double OddsPlayer1 { get; set; }
 		public double OddsPlayer2 { get; set; }
+
+		// Other
+		public string StatusMessage { get; set; }
 
 		public MatchTracker()
 		{
@@ -32,6 +37,7 @@ namespace SaltyBet_Desktop
 			LastPotPlayer2 = 0;
 			LastOddsPlayer1 = 0.0;
 			LastOddsPlayer2 = 0.0;
+			LastWinner = "";
 
 			Player1 = "";
 			Player2 = "";
@@ -54,7 +60,6 @@ namespace SaltyBet_Desktop
 			// If there is a new Player name, it's probably a new match
 			if (LastPlayer1 != Player1 && LastPlayer2 != Player2)
 			{
-
 				return true;
 			}
 
@@ -75,7 +80,14 @@ namespace SaltyBet_Desktop
 			LastPotPlayer2 = PotPlayer2;
 			LastOddsPlayer1 = OddsPlayer1;
 			LastOddsPlayer2 = OddsPlayer2;
-			
+
+			// Check if a winner was announced. 
+			StatusMessage = dataExtractor.GetStatusText();
+			if (StatusMessage.Contains(LastPlayer1))
+				LastWinner = LastPlayer1;
+			if (StatusMessage.Contains(LastPlayer2))
+				LastWinner = LastPlayer2;
+
 			// Get new player names, if applicable. 
 			Player1 = dataExtractor.GetRedName();
 			Player2 = dataExtractor.GetBlueName();

@@ -68,7 +68,7 @@ namespace SaltyBet_Desktop
 						util.GetLongDate(),
 						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1, 
 						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2, 
-						"n/a", "n/a"
+						matchTracker.LastWinner, "n/a"
 					);
 				}
 			}
