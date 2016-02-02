@@ -60,6 +60,8 @@ namespace SaltyBet_Desktop
 			{
 				return true;
 			}
+
+			// If all else fails, return false
 			return false;
 		}
 	}
