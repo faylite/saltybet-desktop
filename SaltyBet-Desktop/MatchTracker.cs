@@ -9,58 +9,36 @@ namespace SaltyBet_Desktop
 	class MatchTracker
 	{
 		// Variables last match
-		private string lastPlayer1;
 		public string LastPlayer1 { get; set; }
-
-		private string lastPlayer2;
 		public string LastPlayer2 { get; set; }
-
-		private int lastPotPlayer1;
 		public int LastPotPlayer1 { get; set; }
-
-		private int lastPotPlayer2;
 		public int LastPotPlayer2 { get; set; }
-
-		private double lastOddsPlayer1;
 		public double LastOddsPlayer1 { get; set; }
-
-		private double lastOddsPlayer2;
 		public double LastOddsPlayer2 { get; set; }
 
 		// Variables current match
-		private string player1;
 		public string Player1 { get; set; }
-
-		private string player2;
 		public string Player2 { get; set; }
-
-		private int potPlayer1;
 		public int PotPlayer1 { get; set; }
-
-		private int potPlayer2;
 		public int PotPlayer2 { get; set; }
-
-		private double oddsPlayer1;
 		public double OddsPlayer1 { get; set; }
-
-		private double oddsPlayer2;
 		public double OddsPlayer2 { get; set; }
 
 		public MatchTracker()
 		{
-			lastPlayer1 = "";
-			lastPlayer2 = "";
-			lastPotPlayer1 = 0;
-			lastPotPlayer2 = 0;
-			lastOddsPlayer1 = 0.0;
-			lastOddsPlayer2 = 0.0;
+			LastPlayer1 = "";
+			LastPlayer2 = "";
+			LastPotPlayer1 = 0;
+			LastPotPlayer2 = 0;
+			LastOddsPlayer1 = 0.0;
+			LastOddsPlayer2 = 0.0;
 
-			player1 = "";
-			player2 = "";
-			potPlayer1 = 0;
-			potPlayer2 = 0;
-			oddsPlayer1 = 0.0;
-			oddsPlayer2 = 0.0;
+			Player1 = "";
+			Player2 = "";
+			PotPlayer1 = 0;
+			PotPlayer2 = 0;
+			OddsPlayer1 = 0.0;
+			OddsPlayer2 = 0.0;
 		}
 
 		/// <summary>
@@ -70,11 +48,11 @@ namespace SaltyBet_Desktop
 		public bool IsNewMatch()
 		{
 			// If there was no last player, this is probably the first match, return false. 
-			if (lastPlayer1 == "" && lastPlayer2 == "")
+			if (LastPlayer1 == "" && LastPlayer2 == "")
 				return false;
 
-			// If there is a new player name, it's probably a new match
-			if (lastPlayer1 != player1 && lastPlayer2 != player2)
+			// If there is a new Player name, it's probably a new match
+			if (LastPlayer1 != Player1 && LastPlayer2 != Player2)
 			{
 				return true;
 			}
@@ -89,23 +67,23 @@ namespace SaltyBet_Desktop
 		/// <param name="dataExtractor"></param>
 		public void Update(DataExtractor dataExtractor)
 		{
-			// Set call's stats to the last
-			lastPlayer1 = player1;
-			lastPlayer2 = player2;
-			lastPotPlayer1 = potPlayer1;
-			lastPotPlayer2 = potPlayer2;
-			lastOddsPlayer1 = oddsPlayer1;
-			lastOddsPlayer2 = oddsPlayer2;
+			// Set call's stats to the Last
+			LastPlayer1 = Player1;
+			LastPlayer2 = Player2;
+			LastPotPlayer1 = PotPlayer1;
+			LastPotPlayer2 = PotPlayer2;
+			LastOddsPlayer1 = OddsPlayer1;
+			LastOddsPlayer2 = OddsPlayer2;
 			
 			// Get new player names, if applicable. 
-			player1 = dataExtractor.GetRedName();
-			player2 = dataExtractor.GetBlueName();
+			Player1 = dataExtractor.GetRedName();
+			Player2 = dataExtractor.GetBlueName();
 			// Get new pots
-			potPlayer1 = dataExtractor.GetRedPotNum();
-			potPlayer2 = dataExtractor.GetBluePotNum();
+			PotPlayer1 = dataExtractor.GetRedPotNum();
+			PotPlayer2 = dataExtractor.GetBluePotNum();
 			// Get new odds
-			oddsPlayer1 = dataExtractor.GetRedOdds();
-			oddsPlayer2 = dataExtractor.GetBlueOdds();
+			OddsPlayer1 = dataExtractor.GetRedOdds();
+			OddsPlayer2 = dataExtractor.GetBlueOdds();
 		}
 
 		/// <summary>
@@ -114,19 +92,19 @@ namespace SaltyBet_Desktop
 		/// <returns></returns>
 		public bool IsTeamMatch()
 		{
-			if (player1.Contains("Team") || player2.Contains("Team"))
+			if (Player1.Contains("Team") || Player2.Contains("Team"))
 				return true;
 			else
 				return false;
 		}
 
 		/// <summary>
-		/// Returns true if last match was a team match
+		/// Returns true if Last match was a team match
 		/// </summary>
 		/// <returns></returns>
 		public bool WasTeamMatch()
 		{
-			if (lastPlayer1.Contains("Team") || lastPlayer2.Contains("Team"))
+			if (LastPlayer1.Contains("Team") || LastPlayer2.Contains("Team"))
 				return true;
 			else
 				return false;
