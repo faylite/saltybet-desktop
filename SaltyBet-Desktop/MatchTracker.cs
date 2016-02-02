@@ -9,11 +9,22 @@ namespace SaltyBet_Desktop
 	class MatchTracker
 	{
 		private string lastPlayer1;
+		public string LastPlayer1 { get; }
+
 		private string lastPlayer2;
+		public string LastPlayer2 { get; }
+
 		private int lastPotPlayer1;
+		public int LastPotPlayer1 { get; }
+
 		private int lastPotPlayer2;
+		public int LastPotPlayer2 { get; }
+
 		private string player1;
+		public string Player1 { get; }
+		
 		private string player2;
+		public string Player2 { get; }
 
 		public MatchTracker()
 		{
