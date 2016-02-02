@@ -29,6 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.Panel pInfo;
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.tbBetStatus = new System.Windows.Forms.TextBox();
@@ -391,11 +394,20 @@
 			this.dgwMatchHistory.AllowUserToAddRows = false;
 			this.dgwMatchHistory.AllowUserToDeleteRows = false;
 			this.dgwMatchHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dgwMatchHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+			this.dgwMatchHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.dgwMatchHistory.BackgroundColor = System.Drawing.Color.LightGray;
 			this.dgwMatchHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgwMatchHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgwMatchHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(4);
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgwMatchHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgwMatchHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgwMatchHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Timestamp,
@@ -408,12 +420,29 @@
             this.Winner,
             this.MatchTime});
 			this.dgwMatchHistory.Cursor = System.Windows.Forms.Cursors.Default;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgwMatchHistory.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgwMatchHistory.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgwMatchHistory.GridColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.dgwMatchHistory.Location = new System.Drawing.Point(0, 350);
 			this.dgwMatchHistory.Name = "dgwMatchHistory";
 			this.dgwMatchHistory.ReadOnly = true;
 			this.dgwMatchHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgwMatchHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 196);
 			this.dgwMatchHistory.TabIndex = 3;
 			// 
