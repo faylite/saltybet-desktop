@@ -30,12 +30,12 @@
 		{
 			System.Windows.Forms.Panel pInfo;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-			this.pMain = new System.Windows.Forms.Panel();
 			this.btnOpenDevTools = new System.Windows.Forms.Button();
 			this.tbBetStatus = new System.Windows.Forms.TextBox();
 			this.lbBetStatus = new System.Windows.Forms.Label();
 			this.tbSaltBalance = new System.Windows.Forms.TextBox();
 			this.lbSaltBalance = new System.Windows.Forms.Label();
+			this.pMain = new System.Windows.Forms.Panel();
 			this.pBlue = new System.Windows.Forms.Panel();
 			this.tbBlueOdds = new System.Windows.Forms.TextBox();
 			this.tbBluePot = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.tbRedName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dgwMatchHistory = new System.Windows.Forms.DataGridView();
 			this.RedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RedPot = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RedOdds = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,24 +60,12 @@
 			this.Winner = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MatchTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			pInfo = new System.Windows.Forms.Panel();
-			this.pMain.SuspendLayout();
 			pInfo.SuspendLayout();
+			this.pMain.SuspendLayout();
 			this.pBlue.SuspendLayout();
 			this.pRed.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwMatchHistory)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// pMain
-			// 
-			this.pMain.BackColor = System.Drawing.Color.Transparent;
-			this.pMain.Controls.Add(pInfo);
-			this.pMain.Controls.Add(this.pBlue);
-			this.pMain.Controls.Add(this.pRed);
-			this.pMain.Dock = System.Windows.Forms.DockStyle.Top;
-			this.pMain.Location = new System.Drawing.Point(0, 0);
-			this.pMain.Name = "pMain";
-			this.pMain.Size = new System.Drawing.Size(1251, 350);
-			this.pMain.TabIndex = 1;
 			// 
 			// pInfo
 			// 
@@ -162,6 +150,18 @@
 			this.lbSaltBalance.TabIndex = 14;
 			this.lbSaltBalance.Text = "Salt Balance";
 			this.lbSaltBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pMain
+			// 
+			this.pMain.BackColor = System.Drawing.Color.Transparent;
+			this.pMain.Controls.Add(pInfo);
+			this.pMain.Controls.Add(this.pBlue);
+			this.pMain.Controls.Add(this.pRed);
+			this.pMain.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pMain.Location = new System.Drawing.Point(0, 0);
+			this.pMain.Name = "pMain";
+			this.pMain.Size = new System.Drawing.Size(1251, 350);
+			this.pMain.TabIndex = 1;
 			// 
 			// pBlue
 			// 
@@ -384,12 +384,12 @@
 			this.label1.Text = "Character Name";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// dataGridView1
+			// dgwMatchHistory
 			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgwMatchHistory.AllowUserToAddRows = false;
+			this.dgwMatchHistory.AllowUserToDeleteRows = false;
+			this.dgwMatchHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwMatchHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RedName,
             this.RedPot,
             this.RedOdds,
@@ -398,12 +398,12 @@
             this.BlueOdds,
             this.Winner,
             this.MatchTime});
-			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView1.Location = new System.Drawing.Point(0, 350);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(1251, 196);
-			this.dataGridView1.TabIndex = 2;
+			this.dgwMatchHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgwMatchHistory.Location = new System.Drawing.Point(0, 350);
+			this.dgwMatchHistory.Name = "dgwMatchHistory";
+			this.dgwMatchHistory.ReadOnly = true;
+			this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 196);
+			this.dgwMatchHistory.TabIndex = 2;
 			// 
 			// RedName
 			// 
@@ -459,20 +459,20 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Ivory;
 			this.ClientSize = new System.Drawing.Size(1251, 546);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.dgwMatchHistory);
 			this.Controls.Add(this.pMain);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
 			this.Text = "SaltyBot";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
-			this.pMain.ResumeLayout(false);
 			pInfo.ResumeLayout(false);
 			pInfo.PerformLayout();
+			this.pMain.ResumeLayout(false);
 			this.pBlue.ResumeLayout(false);
 			this.pBlue.PerformLayout();
 			this.pRed.ResumeLayout(false);
 			this.pRed.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwMatchHistory)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -506,7 +506,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedOdds;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedPot;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedName;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dgwMatchHistory;
 	}
 }
 
