@@ -37,6 +37,12 @@ namespace SaltyBet_Desktop
 			player2 = "";
 		}
 
+		/// <summary>
+		/// Returns true if there is a new match, this is checked by checking if the last player name matches the new one. 
+		/// </summary>
+		/// <param name="player1"></param>
+		/// <param name="player2"></param>
+		/// <returns></returns>
 		public bool IsNewMatch(string player1, string player2)
 		{
 			// Skip team matches
