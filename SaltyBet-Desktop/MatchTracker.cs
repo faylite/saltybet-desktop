@@ -39,6 +39,10 @@ namespace SaltyBet_Desktop
 
 		public bool IsNewMatch(string player1, string player2)
 		{
+			// Skip team matches
+			if (player1.Contains("Team"))
+				return false;
+
 			// Set last cycle's players to last players. 
 			this.lastPlayer1 = this.player1;
 			this.lastPlayer2 = this.player2;
@@ -54,9 +58,6 @@ namespace SaltyBet_Desktop
 			// If there is a new player name, it's probably a new match
 			if (lastPlayer1 != player1)
 			{
-				// Filters out team matches
-				if (player1.Contains("Team"))
-					return false;
 				return true;
 			}
 			return false;
