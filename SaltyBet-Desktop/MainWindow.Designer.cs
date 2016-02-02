@@ -70,6 +70,7 @@
 			// 
 			// pInfo
 			// 
+			pInfo.BackColor = System.Drawing.Color.White;
 			pInfo.Controls.Add(this.btnOpenDevTools);
 			pInfo.Controls.Add(this.tbBetStatus);
 			pInfo.Controls.Add(this.lbBetStatus);
@@ -389,6 +390,11 @@
 			// 
 			this.dgwMatchHistory.AllowUserToAddRows = false;
 			this.dgwMatchHistory.AllowUserToDeleteRows = false;
+			this.dgwMatchHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgwMatchHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+			this.dgwMatchHistory.BackgroundColor = System.Drawing.Color.White;
+			this.dgwMatchHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dgwMatchHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dgwMatchHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgwMatchHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Timestamp,
@@ -400,12 +406,14 @@
             this.BlueOdds,
             this.Winner,
             this.MatchTime});
+			this.dgwMatchHistory.Cursor = System.Windows.Forms.Cursors.Default;
 			this.dgwMatchHistory.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgwMatchHistory.Location = new System.Drawing.Point(0, 350);
 			this.dgwMatchHistory.Name = "dgwMatchHistory";
 			this.dgwMatchHistory.ReadOnly = true;
+			this.dgwMatchHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 196);
-			this.dgwMatchHistory.TabIndex = 2;
+			this.dgwMatchHistory.TabIndex = 3;
 			// 
 			// Timestamp
 			// 
