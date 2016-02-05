@@ -28,6 +28,8 @@ namespace SaltyBet_Desktop
 		{
 			InitializeComponent();
 
+			dbConn = new DatabaseConnection();
+
 			var settings = new CefSettings();
 
 			settings.WindowlessRenderingEnabled = true;
@@ -40,7 +42,6 @@ namespace SaltyBet_Desktop
 			dataExtractor = new DataExtractor(browser);
 			matchTracker = new MatchTracker();
 			util = new Util();
-			dbConn = new DatabaseConnection();
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
