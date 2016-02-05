@@ -20,6 +20,7 @@ namespace SaltyBet_Desktop
 		private DataExtractor dataExtractor;
 		private MatchTracker matchTracker;
 		private Util util;
+		private DatabaseConnection dbConn;
 
 		private Thread refreshThread;
 
@@ -39,6 +40,7 @@ namespace SaltyBet_Desktop
 			dataExtractor = new DataExtractor(browser);
 			matchTracker = new MatchTracker();
 			util = new Util();
+			dbConn = new DatabaseConnection();
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
