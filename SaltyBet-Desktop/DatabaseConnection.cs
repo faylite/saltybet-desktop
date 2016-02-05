@@ -52,7 +52,7 @@ namespace SaltyBet_Desktop
 			// SQL query
 			string sql = @"
 				CREATE TABLE IF NOT EXISTS matches(
-				ID INT PRIMARY KEY NOT NULL,
+				ID INT PRIMARY KEY,
 				TimeStamp TEXT NOT NULL, 
 
 				RedName TEXT NOT NULL, 
