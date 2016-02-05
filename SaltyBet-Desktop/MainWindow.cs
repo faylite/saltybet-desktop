@@ -101,14 +101,6 @@ namespace SaltyBet_Desktop
 			// Update other general info
 			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
 			this.tbBetStatus.Text = dataExtractor.GetStatusText();
-
-			// Spam match data to database // Testing only!!!
-			dbConn.InsertMatchData(
-				util.GetLongDate(),
-				matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1,
-				matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2,
-				matchTracker.LastWinner, "n/a"
-			);
 		}
 
 		/// <summary>
