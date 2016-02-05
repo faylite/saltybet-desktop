@@ -25,11 +25,13 @@ namespace SaltyBet_Desktop
 		{
 			// Create new database if it does not exist
 			CreateDatabase();
-			InitDB();
 
 			// Open db connection. 
 			dbConnection = new SQLiteConnection(String.Format("Data Source={0};Version=3;", dbPath));
 			dbConnection.Open();
+
+			// Create new db tables if they do not exist
+			InitDB();
 		}
 		
 		public void InsertMatchData(string timeStamp, string redName, int redPot, double redOdds, string blueName, int bluePot, double blueOdds, string winner, string matchTime)
@@ -41,7 +43,7 @@ namespace SaltyBet_Desktop
 			", timeStamp, redName, redPot, redOdds, blueName, bluePot, blueOdds, winner, matchTime);
 			// Create the command and execute the query
 			SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
-			command.ExecuteNonQueryAsync();
+			command.ExecuteNonQuery();
 		}
 
 		private void InitDB()
@@ -67,7 +69,7 @@ namespace SaltyBet_Desktop
 			// Create a command that will be executed on the dbConnection
 			SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
 			// Execute the query
-			command.ExecuteNonQueryAsync();
+			command.ExecuteNonQuery();
 		}
 
 		/// <summary>
