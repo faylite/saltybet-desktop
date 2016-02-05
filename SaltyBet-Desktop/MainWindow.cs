@@ -72,6 +72,13 @@ namespace SaltyBet_Desktop
 						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2,
 						matchTracker.LastWinner, "n/a"
 					);
+					// Add match data to database
+					dbConn.InsertMatchData(
+						util.GetLongDate(),
+						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1,
+						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2,
+						matchTracker.LastWinner, "n/a"
+					);
 					// Update datagridview order after adding a new entry
 					if (dgwMatchHistory.SortOrder == SortOrder.Ascending)
 						dgwMatchHistory.Sort(dgwMatchHistory.SortedColumn, ListSortDirection.Ascending);

@@ -32,6 +32,18 @@ namespace SaltyBet_Desktop
 			dbConnection.Open();
 		}
 		
+		public void InsertMatchData(string timeStamp, string redName, int redPot, double redOdds, string blueName, int bluePot, double blueOdds, string winner, string matchTime)
+		{
+			// SQL string
+			string sql = string.Format(@"
+				INSERT INTO matches(TimeStamp, RedName, RedPot, RedOdds, BlueName, BluePot, BlueOdds, Winner, MatchTime) 
+				VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}','{7}','{8}')
+			", timeStamp, redName, redPot, redOdds, blueName, bluePot, blueOdds, winner, matchTime);
+			// Create the command and execute the query
+			SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+			command.ExecuteNonQueryAsync();
+		}
+
 		private void InitDB()
 		{
 			// TimeStamp | RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
