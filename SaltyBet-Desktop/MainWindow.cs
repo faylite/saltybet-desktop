@@ -19,7 +19,6 @@ namespace SaltyBet_Desktop
 
 		private DataExtractor dataExtractor;
 		private MatchTracker matchTracker;
-		private Util util;
 		private DatabaseConnection dbConn;
 
 		private Thread refreshThread;
@@ -41,7 +40,8 @@ namespace SaltyBet_Desktop
 
 			dataExtractor = new DataExtractor(browser);
 			matchTracker = new MatchTracker();
-			util = new Util();
+
+			FillDataView();
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
@@ -68,14 +68,14 @@ namespace SaltyBet_Desktop
 					// row layout
 					// TimeStamp | RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time
 					dgwMatchHistory.Rows.Add(
-						util.GetLongDate(),
+						Util.GetTimeStamp(DateTime.Now),
 						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1,
 						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2,
 						matchTracker.LastWinner, "n/a"
 					);
 					// Add match data to database
 					dbConn.InsertMatchData(
-						util.GetLongDate(),
+						Util.GetTimeStamp(DateTime.Now),
 						matchTracker.LastPlayer1, matchTracker.LastPotPlayer1, matchTracker.LastOddsPlayer1,
 						matchTracker.LastPlayer2, matchTracker.LastPotPlayer2, matchTracker.LastOddsPlayer2,
 						matchTracker.LastWinner, "n/a"
@@ -101,6 +101,11 @@ namespace SaltyBet_Desktop
 			// Update other general info
 			this.tbSaltBalance.Text = dataExtractor.GetSaltBalanceNum().ToString();
 			this.tbBetStatus.Text = dataExtractor.GetStatusText();
+		}
+
+		public void FillDataView()
+		{
+			dbConn.FillDataGridView(dgwMatchHistory);
 		}
 
 		/// <summary>

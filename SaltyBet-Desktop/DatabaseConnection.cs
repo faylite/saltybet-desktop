@@ -59,6 +59,35 @@ namespace SaltyBet_Desktop
 			command.ExecuteNonQuery();
 		}
 
+		/// <summary>
+		/// Fills the passed DataGridView with the rows in the database
+		/// </summary>
+		/// <param name="dgw"></param>
+		public void FillDataGridView(System.Windows.Forms.DataGridView dgw)
+		{
+			// Select all rows from matches table
+			SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM matches", dbConnection);
+			// Execute the query and read it into the DataGridView
+			using (SQLiteDataReader read = cmd.ExecuteReader())
+			{
+				while (read.Read())
+				{
+					dgw.Rows.Add(new object[]
+					{
+						read.GetValue(read.GetOrdinal("timeStamp")),
+						read.GetValue(read.GetOrdinal("redName")),
+						read.GetValue(read.GetOrdinal("redPot")),
+						read.GetValue(read.GetOrdinal("redOdds")),
+						read.GetValue(read.GetOrdinal("blueName")),
+						read.GetValue(read.GetOrdinal("bluePot")),
+						read.GetValue(read.GetOrdinal("blueOdds")),
+						read.GetValue(read.GetOrdinal("winner")),
+						read.GetValue(read.GetOrdinal("matchTime"))
+					});
+				}
+			}
+		}
+
 		private void InitDB()
 		{
 			// TimeStamp | RedName | RedPot | Red Odds | BlueName | BluePot | BlueOdds | Winner | Match Time

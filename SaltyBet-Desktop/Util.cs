@@ -6,22 +6,16 @@ using System.Threading.Tasks;
 
 namespace SaltyBet_Desktop
 {
-	class Util
+	static class Util
 	{
 		/// <summary>
-		/// Returns a string of the current date and time in the format: 
-		/// YYYY/MM/DD-HH:MM:SS
+		/// Returns a timestamp with the formatting "yyyy-MM-dd HH:mm:ss"
 		/// </summary>
+		/// <param name="value"></param>
 		/// <returns></returns>
-		public string GetLongDate()
+		public static string GetTimeStamp(this DateTime value)
 		{
-			return
-				DateTime.Now.Year	+ "/" +
-				DateTime.Now.Month	+ "/" +
-				DateTime.Now.Day	+ "-" +
-				DateTime.Now.Hour	+ ":" +
-				DateTime.Now.Minute
-			;
+			return string.Format("{0} {1}:{2}", value.ToString("yyyy-MM-dd"), value.ToString("HH"), value.ToString("mm"));
 		}
 	}
 }
