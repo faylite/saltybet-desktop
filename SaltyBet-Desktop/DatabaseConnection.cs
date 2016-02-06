@@ -39,10 +39,23 @@ namespace SaltyBet_Desktop
 			// SQL string
 			string sql = string.Format(@"
 				INSERT INTO matches(TimeStamp, RedName, RedPot, RedOdds, BlueName, BluePot, BlueOdds, Winner, MatchTime) 
-				VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}','{7}','{8}')
+				VALUES (@timeStamp, @redName, @redPot, @redOdds, @blueName, @bluePot, @blueOdds, @winner, @matchTime)
 			", timeStamp, redName, redPot, redOdds, blueName, bluePot, blueOdds, winner, matchTime);
 			// Create the command and execute the query
 			SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+
+			// Add escaped paramaters
+			command.Parameters.AddWithValue("timeStamp", timeStamp);
+			command.Parameters.AddWithValue("redName", redName);
+			command.Parameters.AddWithValue("redPot", redPot);
+			command.Parameters.AddWithValue("redOdds", redOdds);
+			command.Parameters.AddWithValue("blueName", blueName);
+			command.Parameters.AddWithValue("bluePot", bluePot);
+			command.Parameters.AddWithValue("blueOdds", blueOdds);
+			command.Parameters.AddWithValue("winner", winner);
+			command.Parameters.AddWithValue("matchTime", matchTime);
+
+			// Execute query
 			command.ExecuteNonQuery();
 		}
 
