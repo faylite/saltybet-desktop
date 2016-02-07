@@ -32,7 +32,11 @@ namespace SaltyBet_Desktop
 			var settings = new CefSettings();
 
 			settings.WindowlessRenderingEnabled = true;
-
+#if !DEBUG
+			// Disable packloading in release build
+			settings.PackLoadingDisabled = true;
+#endif
+			// Initialize Cef with provided settings
 			Cef.Initialize(settings);
 			browser = new ChromiumWebBrowser("http://saltybet.com");
 			// this.pMain.Controls.Add(browser);
