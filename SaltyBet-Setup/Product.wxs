@@ -45,7 +45,7 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="file_SaltyBot.exe">
-        <File Source="$(var.SaltyBet-Desktop_TargetDir)SaltyBet.exe"/>
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)SaltyBot.exe"/>
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="CefSharpDependencies" Directory="INSTALLFOLDER">
