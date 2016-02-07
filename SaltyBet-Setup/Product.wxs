@@ -21,6 +21,7 @@
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="CefSharpDependencies"/>
       <ComponentGroupRef Id="SQLiteDependencies"/>
+      <ComponentRef Id="file_SQLite.Interop.dll"/>
     </Feature>
   </Product>
 
@@ -28,7 +29,9 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="CompanyFolder" Name="Faylite">
-          <Directory Id="INSTALLFOLDER" Name="SaltyBot" />
+          <Directory Id="INSTALLFOLDER" Name="SaltyBot">
+            <Directory Id="X86" Name="x86" />
+          </Directory>
         </Directory>
       </Directory>
     </Directory>
@@ -41,18 +44,53 @@
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="CefSharpDependencies" Directory="INSTALLFOLDER">
-      <Component Id="file_libcef.dll">
-        <File Source="$(var.SaltyBet-Desktop_TargetDir)libcef.dll" />
+      <Component Id="file_CefSharp.BrowserSubprocess.Core.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)CefSharp.BrowserSubprocess.Core.dll" />
+      </Component>
+      <Component Id="file_CefSharp.BrowserSubprocess.exe">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)CefSharp.BrowserSubprocess.exe" />
       </Component>
       <Component Id="file_CefSharp.dll">
         <File Source="$(var.SaltyBet-Desktop_TargetDir)CefSharp.dll" />
       </Component>
+      <Component Id="file_CefSharp.Core.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)CefSharp.Core.dll" />
+      </Component>
       <Component Id="file_CefSharp.OffScreen.dll">
         <File Source="$(var.SaltyBet-Desktop_TargetDir)CefSharp.OffScreen.dll" />
       </Component>
+      <Component Id="file_icudtl.dat">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)icudtl.dat" />
+      </Component>
+      <Component Id="file_libcef.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)libcef.dll" />
+      </Component>
+      <Component Id="file_natives_blob.bin">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)natives_blob.bin" />
+      </Component>
+      <Component Id="file_snapshot_blob.bin">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)snapshot_blob.bin" />
+      </Component>
     </ComponentGroup>
     <ComponentGroup Id="SQLiteDependencies" Directory="INSTALLFOLDER">
-      
+      <Component Id="file_EntityFramework.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)EntityFramework.dll" />
+      </Component>
+      <Component Id="file_EntityFramework.SqlServer.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)EntityFramework.SqlServer.dll" />
+      </Component>
+      <Component Id="file_System.Data.SQLite.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)System.Data.SQLite.dll" />
+      </Component>
+      <Component Id="file_System.Data.SQLite.EF6.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)System.Data.SQLite.EF6.dll" />
+      </Component>
+      <Component Id="file_System.Data.SQLite.Linq.dll">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)System.Data.SQLite.Linq.dll" />
+      </Component>
     </ComponentGroup>
+    <Component Id="file_SQLite.Interop.dll" Directory="X86">
+      <File Source="$(var.SaltyBet-Desktop_TargetDir)x86\SQLite.Interop.dll" />
+    </Component>
   </Fragment>
 </Wix>
