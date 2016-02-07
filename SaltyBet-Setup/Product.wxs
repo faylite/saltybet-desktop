@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
   
   <?define SaltyBet-Desktop_TargetDir=$(var.SaltyBet-Desktop.TargetDir)?>
   
@@ -15,6 +16,10 @@
     <MediaTemplate EmbedCab="yes"/>
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This application requires .NET Framework 4.5.2. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed or NETFRAMEWORK45]]>
+    </Condition>
     <UIRef Id="WixUI_InstallDir"/>
     
     <Feature Id="ProductFeature" Title="SaltyBot" Level="1">
