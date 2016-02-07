@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
   <?define SaltyBet-Desktop_TargetDir=$(var.SaltyBet-Desktop.TargetDir)?>
+  <?define Packages="..\packages\"?>
+  <?define CEF-Redist="..\packages\cef.redist.x86.3.2526.1362\CEF\"?>
+  
   <Product Id="*" 
            Name="SaltyBot_Setup" 
            Language="1033" 
@@ -12,12 +16,14 @@
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes"/>
 
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir"/>
+    
     <Feature Id="ProductFeature" Title="SaltyBet_Setup" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="CefSharpDependencies"/>
+      <ComponentGroupRef Id="SQLiteDependencies"/>
     </Feature>
-
-    <Property Id="WixUI_Installdir">Installdir</Property>
-    <UIRef Id="WixUI_InstallDir"/>
   </Product>
 
   <Fragment>
@@ -32,7 +38,43 @@
 
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-      
+      <Component Id="file_SaltyBot.exe">
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)SaltyBet.exe" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="CefSharpDependencies" Directory="INSTALLFOLDER">
+      <Component Id="file_cef.pak">
+        <File Id="file_cef.pak" Source="$(var.CEF-Redist)cef.pak" />
+      </Component>
+      <Component Id="file_d3dcompiler_43.dll">
+        <File Id="file_d3dcompiler_43.dll" Source ="$(var.CEF-Redist)x86\d3dcompiler_43.dll" />
+      </Component>
+      <Component Id="file_d3dcompiler_47.dll">
+        <File Id="file_d3dcompiler_47.dll" Source ="$(var.CEF-Redist)x86\d3dcompiler_47.dll" />
+      </Component>
+      <Component Id="file_libcef.dll">
+        <File Id="file_libcef.dll" Source ="$(var.CEF-Redist)x86\libcef.dll" />
+      </Component>
+      <Component Id="file_libEGL.dll">
+        <File Id="file_libEGL.dll" Source ="$(var.CEF-Redist)x86\libEGL.dll" />
+      </Component>
+      <Component Id="file_libGLESv2.dll">
+        <File Id="file_libGLESv2.dll" Source ="$(var.CEF-Redist)x86\libGLESv2.dll" />
+      </Component>
+      <Component Id="file_natives_blob.bin">
+        <File Id="file_natives_blob.bin" Source ="$(var.CEF-Redist)x86\natives_blob.bin" />
+      </Component>
+      <Component Id="file_snapshot_blob.bin">
+        <File Id="file_snapshot_blob.bin" Source ="$(var.CEF-Redist)x86\snapshot_blob.bin" />
+      </Component>
+      <Component Id="file_widevinecdmadapter.dll">
+        <File Id="file_widevinecdmadapter.dll" Source ="$(var.CEF-Redist)x86\widevinecdmadapter.dll" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="SQLiteDependencies" Directory="INSTALLFOLDER">
+      <Component Id="file_System.Data.SQLite.dll">
+        <File Id="file_System.Data.SQLite.dll" Source="$(var.Packages)System.Data.SQLite.Core.1.0.99.0\lib\net451\System.Data.SQLite.dll" />
+      </Component>
     </ComponentGroup>
   </Fragment>
 </Wix>

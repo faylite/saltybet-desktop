@@ -24,6 +24,12 @@
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SaltyBet-Desktop\SaltyBet-Desktop.csproj">
       <Name>SaltyBet-Desktop</Name>
       <Project>{ebd86bb4-049c-444e-a341-a25e2986d28e}</Project>
@@ -32,12 +38,6 @@
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WixExtension Include="WixUIExtension">
-      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
-      <Name>WixUIExtension</Name>
-    </WixExtension>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
