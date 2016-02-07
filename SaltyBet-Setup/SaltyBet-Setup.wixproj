@@ -4,9 +4,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>3.10</ProductVersion>
-    <ProjectGuid>8e4e1b33-6352-46f3-a744-c56d0ab56a25</ProjectGuid>
+    <ProjectGuid>aa547907-1f37-4db2-8c02-38cd45f89bf2</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>SaltyBet_Installer</OutputName>
+    <OutputName>SaltyBet_Setup</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
@@ -22,6 +22,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaltyBet-Desktop\SaltyBet-Desktop.csproj">
+      <Name>SaltyBet-Desktop</Name>
+      <Project>{ebd86bb4-049c-444e-a341-a25e2986d28e}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
