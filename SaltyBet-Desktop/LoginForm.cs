@@ -60,7 +60,6 @@ namespace SaltyBet_Desktop
             // Get the cookies for saltybet
             string[] cookieHeaders = cookies.GetCookieHeader(new Uri("http://www.saltybet.com")).Split(';');
 
-            string[] sessionCookieString;
             foreach (string i in cookieHeaders)
             {
                 // Cookie name
