@@ -31,14 +31,15 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.cbRememberLogin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(12, 83);
+            this.btnLogin.Location = new System.Drawing.Point(12, 108);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(463, 72);
+            this.btnLogin.Size = new System.Drawing.Size(463, 47);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -65,11 +66,22 @@
             this.tbPassword.TabIndex = 4;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
+            // cbRememberLogin
+            // 
+            this.cbRememberLogin.AutoSize = true;
+            this.cbRememberLogin.Location = new System.Drawing.Point(12, 85);
+            this.cbRememberLogin.Name = "cbRememberLogin";
+            this.cbRememberLogin.Size = new System.Drawing.Size(102, 17);
+            this.cbRememberLogin.TabIndex = 5;
+            this.cbRememberLogin.Text = "Remember login";
+            this.cbRememberLogin.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 170);
+            this.Controls.Add(this.cbRememberLogin);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.btnLogin);
@@ -88,5 +100,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.CheckBox cbRememberLogin;
     }
 }
