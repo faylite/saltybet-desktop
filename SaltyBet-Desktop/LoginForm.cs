@@ -19,67 +19,18 @@ namespace SaltyBet_Desktop
     public partial class LoginForm : Form
     {
         private ChromiumWebBrowser browser;
+
         public LoginForm(ChromiumWebBrowser browser)
         {
             this.browser = browser;
             InitializeComponent();
         }
 
-        private CookieContainer SendLoginRequest(string email, string password)
-        {
-            // Container for the cookies
-            CookieContainer cookies = new CookieContainer();
-
-            // Post data sent with request
-            var postData = "email=" + email + "&pword=" + password + "&authenticate=signin";
-            var data = Encoding.ASCII.GetBytes(postData);
-
-            // Create a request using the POST data collected from saltybet
-            var request = (HttpWebRequest) WebRequest.Create("http://www.saltybet.com/authenticate?signin=1");
-            request.CookieContainer = cookies;
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
-            request.AllowAutoRedirect = true;
-            request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36";
-            // Write the post data to the request stream
-            using (var stream = request.GetRequestStream())
-            {
-                stream.Write(data, 0, data.Length);
-                stream.Close();
-            }
-
-            request.GetResponse();
-
-            return cookies;
-        }
-
         private void login(object sender, EventArgs e)
         {
-            // Flush existing cookies
-            Cef.GetGlobalCookieManager().DeleteCookiesAsync("http://www.saltybet.com/", "");
+            Account account = new Account(browser);
 
-            CookieContainer cookies = SendLoginRequest(tbUsername.Text, tbPassword.Text);
-
-            // Get the cookies for saltybet
-            string[] cookieHeaders = cookies.GetCookieHeader(new Uri("http://www.saltybet.com")).Split(';');
-
-            foreach (string i in cookieHeaders)
-            {
-                // Cookie name
-                string name = i.Split('=')[0];
-                // Value of cookie
-                string value = i.Split('=')[1];
-
-                Cookie cookie = new Cookie();
-                cookie.Name = name;
-                cookie.Domain = "www.saltybet.com";
-                cookie.Creation = DateTime.Now;
-                cookie.Value = value;
-                Cef.GetGlobalCookieManager().SetCookieAsync("http://www.saltybet.com/", cookie);
-            }
-            
-            browser.Reload();
+            account.Login(this.tbUsername.Text, this.tbPassword.Text);
             this.Close();
         }
     }

@@ -115,6 +115,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DataExtractor.cs" />
     <Compile Include="DomInteractor.cs" />
