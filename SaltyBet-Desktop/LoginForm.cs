@@ -80,6 +80,7 @@ namespace SaltyBet_Desktop
             }
             
             browser.Reload();
+            this.Close();
         }
     }
 }
