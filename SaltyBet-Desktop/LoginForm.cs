@@ -31,7 +31,7 @@ namespace SaltyBet_Desktop
             CookieContainer cookies = new CookieContainer();
 
             // Post data sent with request
-            var postData = "email=" + email + "&pword=" + password;
+            var postData = "email=" + email + "&pword=" + password + "&authenticate=signin";
             var data = Encoding.ASCII.GetBytes(postData);
 
             // Create a request using the POST data collected from saltybet
@@ -40,7 +40,7 @@ namespace SaltyBet_Desktop
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = data.Length;
-            request.AllowAutoRedirect = false;
+            request.AllowAutoRedirect = true;
             request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36";
             // Write the post data to the request stream
             using (var stream = request.GetRequestStream())
