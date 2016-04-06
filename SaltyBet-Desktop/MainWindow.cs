@@ -49,9 +49,6 @@ namespace SaltyBet_Desktop
 
 			refreshThread = new Thread(refreshLoop);
 			refreshThread.Start();
-
-            Form loginForm = new LoginForm(browser);
-		    loginForm.Show();
         }
 
 		/// <summary>
