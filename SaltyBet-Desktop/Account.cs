@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CefSharp.OffScreen;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace SaltyBet_Desktop
 {
@@ -19,6 +20,27 @@ namespace SaltyBet_Desktop
         public Account(ChromiumWebBrowser browser)
         {
             this.browser = browser;
+        }
+
+        public void Login()
+        {
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+
+                byte[] entropy = new byte[20];
+                byte[] encryptedEmail = Encoding.UTF8.GetBytes(appSettings["email"]);
+                byte[] encryptedPassword = Encoding.UTF8.GetBytes(appSettings["password"]);
+
+                Login(
+                    ProtectedData.Unprotect(encryptedEmail, entropy, DataProtectionScope.CurrentUser).ToString(),
+                    ProtectedData.Unprotect(encryptedPassword, entropy, DataProtectionScope.CurrentUser).ToString()
+                );
+            }
+            catch (ConfigurationErrorsException)
+            {
+                MessageBox.Show("Could not load config file", "Error");
+            }
         }
 
         public void Login(string email, string password)
