@@ -75,7 +75,7 @@ namespace SaltyBet_Desktop
             return cookies;
         }
 
-        private void SaveLogin(string email, string password)
+        public void SaveLogin(string email, string password)
         {
             
         }
