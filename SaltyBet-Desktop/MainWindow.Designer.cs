@@ -62,12 +62,17 @@
             this.BlueOdds = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Winner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatchTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pInfo = new System.Windows.Forms.Panel();
             pInfo.SuspendLayout();
             this.pMain.SuspendLayout();
             this.pBlue.SuspendLayout();
             this.pRed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMatchHistory)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pInfo
@@ -150,7 +155,7 @@
             this.pMain.Controls.Add(this.pBlue);
             this.pMain.Controls.Add(this.pRed);
             this.pMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pMain.Location = new System.Drawing.Point(0, 0);
+            this.pMain.Location = new System.Drawing.Point(0, 24);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(1251, 350);
             this.pMain.TabIndex = 1;
@@ -418,7 +423,7 @@
             this.dgwMatchHistory.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgwMatchHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwMatchHistory.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgwMatchHistory.Location = new System.Drawing.Point(0, 350);
+            this.dgwMatchHistory.Location = new System.Drawing.Point(0, 374);
             this.dgwMatchHistory.Name = "dgwMatchHistory";
             this.dgwMatchHistory.ReadOnly = true;
             this.dgwMatchHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -432,7 +437,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgwMatchHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwMatchHistory.RowHeadersVisible = false;
-            this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 196);
+            this.dgwMatchHistory.Size = new System.Drawing.Size(1251, 172);
             this.dgwMatchHistory.TabIndex = 3;
             // 
             // Timestamp
@@ -489,6 +494,38 @@
             this.MatchTime.Name = "MatchTime";
             this.MatchTime.ReadOnly = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1251, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.btnOpenLoginForm_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,7 +534,9 @@
             this.ClientSize = new System.Drawing.Size(1251, 546);
             this.Controls.Add(this.dgwMatchHistory);
             this.Controls.Add(this.pMain);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SaltyBot";
@@ -510,7 +549,10 @@
             this.pRed.ResumeLayout(false);
             this.pRed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMatchHistory)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -544,6 +586,10 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedOdds;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedPot;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RedName;
-	}
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+    }
 }
 

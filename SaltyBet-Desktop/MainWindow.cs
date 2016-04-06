@@ -143,6 +143,12 @@ namespace SaltyBet_Desktop
 			browser.ShowDevTools();
 		}
 
+	    private void btnOpenLoginForm_Click(object sender, EventArgs e)
+	    {
+            Form loginForm = new LoginForm(browser);
+            loginForm.Show();
+        }
+
 		private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			// Dispose of the browser window. 
