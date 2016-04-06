@@ -66,7 +66,6 @@ namespace SaltyBet_Desktop
                 string name = i.Split('=')[0];
                 // Value of cookie
                 string value = i.Split('=')[1];
-                MessageBox.Show(value, name);
 
                 Cookie cookie = new Cookie();
                 cookie.Name = name;
