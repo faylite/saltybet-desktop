@@ -38,12 +38,16 @@ namespace SaltyBet_Desktop
             var request = (HttpWebRequest) WebRequest.Create("http://www.saltybet.com/authenticate?signin=1");
             request.CookieContainer = cookies;
             request.Method = "POST";
-            request.Referer = "http://www.saltybet.com/authenticate?signin=1";
-            request.KeepAlive = true;
             request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+            request.AllowAutoRedirect = false;
+            request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36";
             // Write the post data to the request stream
             using (var stream = request.GetRequestStream())
+            {
                 stream.Write(data, 0, data.Length);
+                stream.Close();
+            }
 
             request.GetResponse();
 
