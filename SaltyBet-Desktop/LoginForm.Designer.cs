@@ -38,7 +38,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(12, 83);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(462, 72);
+            this.btnLogin.Size = new System.Drawing.Size(463, 72);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -49,9 +49,9 @@
             this.tbUsername.AllowDrop = true;
             this.tbUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.Location = new System.Drawing.Point(13, 13);
+            this.tbUsername.Location = new System.Drawing.Point(12, 13);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(462, 29);
+            this.tbUsername.Size = new System.Drawing.Size(463, 29);
             this.tbUsername.TabIndex = 1;
             // 
             // tbPassword
