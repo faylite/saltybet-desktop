@@ -52,7 +52,7 @@ namespace SaltyBet_Desktop
 
             Form loginForm = new LoginForm(browser);
 		    loginForm.Show();
-		}
+        }
 
 		/// <summary>
 		/// Updates the textboxes with new data from saltybet site.
