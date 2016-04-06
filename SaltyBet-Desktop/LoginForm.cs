@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CefSharp.OffScreen;
 
 namespace SaltyBet_Desktop
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private ChromiumWebBrowser browser;
+        public LoginForm(ChromiumWebBrowser browser)
         {
+            this.browser = browser;
             InitializeComponent();
+        }
+
+        private void login()
+        {
+            
         }
     }
 }
