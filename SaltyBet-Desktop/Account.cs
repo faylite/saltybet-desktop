@@ -35,11 +35,15 @@ namespace SaltyBet_Desktop
                 Login(
                     ProtectedData.Unprotect(encryptedEmail, entropy, DataProtectionScope.CurrentUser).ToString(),
                     ProtectedData.Unprotect(encryptedPassword, entropy, DataProtectionScope.CurrentUser).ToString()
-                );
+                    );
             }
             catch (ConfigurationErrorsException)
             {
                 MessageBox.Show("Could not load config file", "Error");
+            }
+            catch (ArgumentNullException)
+            {
+                // Could not find saved login, break.
             }
         }
 

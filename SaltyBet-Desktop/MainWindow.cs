@@ -45,6 +45,9 @@ namespace SaltyBet_Desktop
 			dataExtractor = new DataExtractor(browser);
 			matchTracker = new MatchTracker();
 
+            Account account = new Account(browser);
+            account.Login();
+
 			FillDataView();
 
 			refreshThread = new Thread(refreshLoop);
