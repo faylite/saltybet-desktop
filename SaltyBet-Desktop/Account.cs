@@ -1,11 +1,14 @@
 ﻿using CefSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using CefSharp.OffScreen;
+using System.Security.Cryptography;
 
 namespace SaltyBet_Desktop
 {
@@ -77,7 +80,16 @@ namespace SaltyBet_Desktop
 
         public void SaveLogin(string email, string password)
         {
-            
+            byte[] entropy = new byte[20];
+
+            byte[] plainEmail = Encoding.UTF8.GetBytes(email);
+            byte[] encryptedEmail = ProtectedData.Protect(plainEmail, entropy, DataProtectionScope.CurrentUser);
+
+            byte[] plainPassword = Encoding.UTF8.GetBytes(password);
+            byte[] encryptedPassword = ProtectedData.Protect(plainPassword, entropy, DataProtectionScope.CurrentUser);
+
+            ConfigurationManager.AppSettings.Add("email", encryptedEmail.ToString());
+            ConfigurationManager.AppSettings.Add("password", encryptedPassword.ToString());
         }
     }
 }
