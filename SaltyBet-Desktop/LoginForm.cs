@@ -31,6 +31,7 @@ namespace SaltyBet_Desktop
             Account account = new Account(browser);
 
             account.Login(this.tbUsername.Text, this.tbPassword.Text);
+            MessageBox.Show("You should be logged in now, wait a couple of seconds and if you don't see your salt balance change from 0 you might have used a wrong username/password.");
             this.Close();
         }
     }
