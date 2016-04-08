@@ -20,7 +20,7 @@
     <Condition Message="This application requires .NET Framework 4.5.2. Please install the .NET Framework then run this installer again.">
       <![CDATA[Installed or NETFRAMEWORK45]]>
     </Condition>
-    <WixVariable Id="WixUILicenseRtf" Value="res\MPL-2.0.rtf" />
+    <WixVariable Id="WixUILicenseRtf" Value="res\Apache-2.0.rtf" />
     <UIRef Id="WixUI_InstallDir"/>
     
     <Feature Id="ProductFeature" Title="SaltyBot" Level="1">
