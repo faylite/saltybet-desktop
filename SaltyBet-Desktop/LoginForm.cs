@@ -24,6 +24,8 @@ namespace SaltyBet_Desktop
         {
             this.browser = browser;
             InitializeComponent();
+            Account account = new Account(browser);
+            account.Login();
         }
 
         private void login(object sender, EventArgs e)
