@@ -24,27 +24,7 @@ namespace SaltyBet_Desktop
 
         public void Login()
         {
-            try
-            {
-                var appSettings = ConfigurationManager.AppSettings;
-
-                byte[] entropy = new byte[20];
-                byte[] encryptedEmail = Encoding.UTF8.GetBytes(appSettings["email"]);
-                byte[] encryptedPassword = Encoding.UTF8.GetBytes(appSettings["password"]);
-
-                string email = ProtectedData.Unprotect(encryptedEmail, entropy, DataProtectionScope.CurrentUser).ToString();
-                string password = ProtectedData.Unprotect(encryptedPassword, entropy, DataProtectionScope.CurrentUser).ToString();
-
-                Login(email, password);
-            }
-            catch (ConfigurationErrorsException)
-            {
-                MessageBox.Show("Could not load config file", "Error");
-            }
-            catch (ArgumentNullException)
-            {
-                // Could not find saved login, break.
-            }
+            
         }
 
         public void Login(string email, string password)
@@ -107,40 +87,7 @@ namespace SaltyBet_Desktop
 
         public void SaveLogin(string email, string password)
         {
-            byte[] entropy = new byte[20];
-
-            byte[] plainEmail = Encoding.UTF8.GetBytes(email);
-            byte[] encryptedEmail = ProtectedData.Protect(plainEmail, entropy, DataProtectionScope.CurrentUser);
-            string sEmail = Encoding.UTF8.GetString(encryptedEmail);
-
-            byte[] plainPassword = Encoding.UTF8.GetBytes(password);
-            byte[] encryptedPassword = ProtectedData.Protect(plainPassword, entropy, DataProtectionScope.CurrentUser);
-            string sPassword = Encoding.UTF8.GetString(encryptedPassword);
-            
-            AddUpdateAppSetting("email", sEmail);
-            AddUpdateAppSetting("password", sPassword);
-        }
-
-        public void AddUpdateAppSetting(string key, string value)
-        {
-            try
-            {
-                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                MessageBox.Show(configFile.FilePath);
-                var settings = configFile.AppSettings.Settings;
-
-                if (settings[key] == null)
-                    settings.Add(key, value);
-                else
-                    settings[key].Value = value;
-
-                configFile.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
-            }
-            catch (ConfigurationErrorsException)
-            {
-                MessageBox.Show("Couldn't save your email and password", "Error");
-            }
+            // TODO: Implement login saving
         }
     }
 }

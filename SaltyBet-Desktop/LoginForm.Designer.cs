@@ -69,6 +69,7 @@
             // cbRememberLogin
             // 
             this.cbRememberLogin.AutoSize = true;
+            this.cbRememberLogin.Enabled = false;
             this.cbRememberLogin.Location = new System.Drawing.Point(12, 85);
             this.cbRememberLogin.Name = "cbRememberLogin";
             this.cbRememberLogin.Size = new System.Drawing.Size(102, 17);
