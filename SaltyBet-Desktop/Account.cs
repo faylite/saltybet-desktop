@@ -29,7 +29,6 @@ namespace SaltyBet_Desktop
 
         public void Login(string email, string password)
         {
-            MessageBox.Show(email + " : " + password);
             // Flush existing cookies
             Cef.GetGlobalCookieManager().DeleteCookiesAsync("http://www.saltybet.com/", "");
 
