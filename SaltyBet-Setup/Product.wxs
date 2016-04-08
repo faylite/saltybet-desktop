@@ -34,10 +34,8 @@
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="CompanyFolder" Name="Faylite">
-          <Directory Id="INSTALLFOLDER" Name="SaltyBot">
-            <Directory Id="X86" Name="x86" />
-          </Directory>
+        <Directory Id="INSTALLFOLDER" Name="SaltyBot">
+          <Directory Id="X86" Name="x86" />
         </Directory>
       </Directory>
     </Directory>
@@ -46,7 +44,7 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="file_SaltyBot.exe">
-        <File Source="$(var.SaltyBet-Desktop_TargetDir)SaltyBot.exe"/>
+        <File Source="$(var.SaltyBet-Desktop_TargetDir)SaltyBot.exe" />
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="CefSharpDependencies" Directory="INSTALLFOLDER">
