@@ -25,6 +25,7 @@
     
     <Feature Id="ProductFeature" Title="SaltyBot" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="ShortcutComponents" />
       <ComponentGroupRef Id="CefSharpDependencies"/>
       <ComponentGroupRef Id="SQLiteDependencies"/>
       <ComponentRef Id="file_SQLite.Interop.dll"/>
@@ -38,13 +39,27 @@
           <Directory Id="X86" Name="x86" />
         </Directory>
       </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="AppStartMenuFolder" Name="SaltyBot" />
+      </Directory>
     </Directory>
   </Fragment>
-
+  
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="file_SaltyBot.exe">
         <File Source="$(var.SaltyBet-Desktop_TargetDir)SaltyBot.exe" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="ShortcutComponents">
+      <Component Id="shortcut_SaltyBot.exe" Directory="AppStartMenuFolder">
+        <Shortcut Id="shortcut_SaltyBot.exe" 
+                  Name="SaltyBot" 
+                  Description="SaltyBet match data scraper" 
+                  Directory="AppStartMenuFolder" 
+                  Target="[INSTALLFOLDER]SaltyBot.exe" />
+        <RemoveFolder Id="RemoveAppStartMenuFolder" Directory="AppStartMenuFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\SaltyBot" Name="installed" Type="integer" Value="1" KeyPath="yes" />
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="CefSharpDependencies" Directory="INSTALLFOLDER">
