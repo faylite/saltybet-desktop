@@ -35,6 +35,8 @@ namespace SaltyBet_Desktop
 #if !DEBUG
 			// Disable packloading in release build
 			settings.PackLoadingDisabled = true;
+            // Disable logs in release build
+            settings.LogSeverity = LogSeverity.Disable;
 #endif
 			// Initialize Cef with provided settings
 			Cef.Initialize(settings);
