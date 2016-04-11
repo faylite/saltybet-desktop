@@ -42,6 +42,7 @@
       <Directory Id="ProgramMenuFolder">
         <Directory Id="AppStartMenuFolder" Name="SaltyBot" />
       </Directory>
+      <Directory Id="DesktopFolder" />
     </Directory>
   </Fragment>
   
@@ -52,13 +53,20 @@
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="ShortcutComponents">
-      <Component Id="shortcut_SaltyBot.exe" Directory="AppStartMenuFolder">
+      <Component Id="shortcut_SaltyBot.exe" Directory="AppStartMenuFolder" Guid="991ED494-46B5-4B08-AEF8-1BF7A30A0B6D">
         <Shortcut Id="shortcut_SaltyBot.exe" 
                   Name="SaltyBot" 
                   Description="SaltyBet match data scraper" 
                   Directory="AppStartMenuFolder" 
                   Target="[INSTALLFOLDER]SaltyBot.exe" />
         <RemoveFolder Id="RemoveAppStartMenuFolder" Directory="AppStartMenuFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\SaltyBot" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+      <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="BC100406-9C94-4571-AEA0-4370D17AB390">
+        <Shortcut Id="desktop_shortcut_SaltyBot.exe"
+                  Name="SaltyBot"
+                  Description="SaltyBet maatch data scraper"
+                  Target="[INSTALLFOLDER]SaltyBot.exe" />
         <RegistryValue Root="HKCU" Key="Software\SaltyBot" Name="installed" Type="integer" Value="1" KeyPath="yes" />
       </Component>
     </ComponentGroup>
