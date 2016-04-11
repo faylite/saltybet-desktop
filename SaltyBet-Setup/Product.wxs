@@ -22,6 +22,9 @@
     </Condition>
     <WixVariable Id="WixUILicenseRtf" Value="res\Apache-2.0.rtf" />
     <UIRef Id="WixUI_InstallDir"/>
+
+    <Icon Id="file_icon.ico" SourceFile="res\icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="file_icon.ico" />
     
     <Feature Id="ProductFeature" Title="SaltyBot" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
